@@ -1,6 +1,5 @@
 .landing {
-  cursor: pointer;
-  color: #F0F0F0;
+  color: var(--text-color);
   width: 80%;
   display: flex;
   justify-content: center;
@@ -9,13 +8,24 @@
 }
 
 #landing-button {
-  background-color: #717171;
-  color: #F0F0F0;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   padding: 10px;
   margin: 20px 0px;
   width: 50%;
+  box-shadow: 5px 8px 10px var(--box-shadow), -5px 10px 10px var(--box-shadow);
+  transition: all .5s ease;
+}
+
+#landing-button > h2 {
+  transition: all .5s ease;
 }
 
 #landing-button > h2:hover {
   opacity: 0.6;
+}
+
+#landing-button:active {
+  box-shadow: none;
 }

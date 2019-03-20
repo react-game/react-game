@@ -8,6 +8,7 @@ footer {
 
 footer > h2 {
   margin-left: 40px;
+  transition: all .5s ease;
 }
 
 footer > h2:hover {
@@ -15,6 +16,6 @@ footer > h2:hover {
 }
 
 a {
-  color: #717171;
+  color: var(--secondary-color);
   text-decoration: none;
 }

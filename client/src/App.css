@@ -11,3 +11,9 @@
   width: 100vw;
 }
 
+  :root {
+    --text-color: #F0F0F0; 
+    --secondary-color: #717171;
+    --box-shadow: #1d1c1c;
+  }
+

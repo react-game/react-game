@@ -9,8 +9,8 @@ class Landing extends Component {
         <h1>CLICK TO ENTER!</h1>
 
         {/* please don't put anything inside this "landing-button" div!  */}
-        <div id="landing-button">
-          <h2 onClick={() => this.props.history.push("/game")}>ENTER</h2>
+        <div id="landing-button" onClick={() => this.props.history.push("/game")}>
+          <h2>ENTER</h2>
         </div>
       </div>
     );
