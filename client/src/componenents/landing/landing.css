@@ -7,6 +7,10 @@
   flex-direction: column;
 }
 
+.landing > h1 {
+  text-shadow: 5px 5px 5px var(--dark-shadow);
+}
+
 #landing-button {
   cursor: pointer;
   background-color: var(--secondary-color);
@@ -14,16 +18,25 @@
   padding: 10px;
   margin: 20px 0px;
   width: 50%;
-  box-shadow: 5px 8px 10px var(--box-shadow), -5px 10px 10px var(--box-shadow);
+  box-shadow: 5px 8px 10px var(--dark-shadow), -5px 10px 10px var(--dark-shadow);
+  transition: all .5s ease;
+}
+
+#landing-button > h2, #landing-button {
   transition: all .5s ease;
 }
 
 #landing-button > h2 {
-  transition: all .5s ease;
+  text-shadow: 2px 2px 2px var(--light-shadow);
 }
 
+/* Pseudo classes for the 'enter' button */
 #landing-button > h2:hover {
-  opacity: 0.6;
+  opacity: 0.9;
+}
+
+#landing-button:hover {
+  opacity: 0.8;
 }
 
 #landing-button:active {

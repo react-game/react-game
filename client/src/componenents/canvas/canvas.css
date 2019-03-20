@@ -4,12 +4,13 @@
 }
 
 .canvas-wrapper {
-  width: 60%;
+  width: 500px;
   height: 500px;
+  margin: 0px 50px;
 }
 
 .ourCanvas {
   border: 30px solid var(--secondary-color);
-  width: 100%;  
+  width: 500px;
   height: 500px;
 }

@@ -6,11 +6,12 @@
   background-color: var(--secondary-color);
   height: 500px;
   width: 150px;
-  box-shadow: 5px 5px 5px var(--box-shadow);  
+  box-shadow: 5px 5px 5px var(--dark-shadow);  
 }
 
 .points-box > h2 {
   color: var(--text-color);
   text-align: center;
   padding: 10px 0px;
+  text-shadow: 2px 2px 2px var(--light-shadow);
 }

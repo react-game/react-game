@@ -4,6 +4,7 @@ footer {
   bottom: 0;
   position: absolute;
   padding-bottom: 20px;
+  text-shadow: 5px 5px 5px var(--dark-shadow);
 }
 
 footer > h2 {
