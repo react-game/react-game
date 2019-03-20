@@ -1,5 +1,12 @@
 footer {
+  display: flex;
+  cursor: pointer;
   bottom: 0;
   position: absolute;
   padding-bottom: 20px;
+}
+
+footer > h2 {
+  margin-left: 40px;
+  color: #717171;
 }
