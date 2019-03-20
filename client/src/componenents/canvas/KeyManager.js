@@ -16,7 +16,8 @@ const key = {
     a: 65,
     d: 68,
     s: 83,
-    enter: 13
+    enter: 13,
+    space: 32
 }
 
 class KeyManager extends Component {
@@ -27,7 +28,8 @@ class KeyManager extends Component {
             left: 0,
             right: 0,
             up: 0,
-            down: 0
+            down: 0,
+            enterOrSpace: 0
         }
     }
     //binds keys when the app is open
@@ -66,7 +68,9 @@ class KeyManager extends Component {
                 console.log('down or s')
                 break
             case key.enter:
+            case key.space:
                 keys.down = value;
+                console.log('enter or space was pressed')
                 break
             default:
                 console.log('No game key was pressed')
