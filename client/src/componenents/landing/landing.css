@@ -42,3 +42,32 @@
 #landing-button:active {
   box-shadow: none;
 }
+
+
+.landing > .users > .user-card > img:focus {
+  opacity: 0;
+}
+
+.users {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 5% 0;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.user-card > img {
+  width: 150px;
+}
+
+.users > .user-card:active {
+  mix-blend-mode: overlay;
+}

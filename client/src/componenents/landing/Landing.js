@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import {withInterfaceStore} from "./../../shared/InterfaceStore"
 import './landing.css';
 
+
 class Landing extends Component {
   componentDidMount() {
     this.props.getUsers()
   }
+
+  // select = () => {
+
+  // }
 
   render() {
     let mappedUsers = this.props.usersArr.map(user => {
