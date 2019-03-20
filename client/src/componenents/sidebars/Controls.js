@@ -6,7 +6,8 @@ class Controls extends Component {
     render() {
         return (
             <div className="controls-box">
-                Me is Controls!!!!
+                <h2>START</h2>
+                <h2 onClick={() => this.props.history.push("/")}>RE-SELECT PLAYER</h2>
             </div>
         );
     }

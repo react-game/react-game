@@ -5,7 +5,7 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        Landing
+        <button onClick={() => this.props.history.push("/game")}>enter</button>
       </div>
     );
   }

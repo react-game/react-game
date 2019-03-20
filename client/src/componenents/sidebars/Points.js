@@ -5,7 +5,7 @@ class Points extends Component {
   render() {
     return (
       <div className="points-box">
-        Points
+        <h2>POINTS:</h2>
       </div>
     );
   }

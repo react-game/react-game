@@ -7,10 +7,12 @@ import './gameDisplay.css';
 class GameDisplay extends Component {
   render() {
     return (
-      <div className="game-display-box">
-        <Controls />
-        <Canvas />
-        <Points />
+      <div className="game-display">
+        <div className="game-display-box">
+          <Controls history={this.props.history}/>
+          <Canvas />
+          <Points />
+        </div>
       </div>
     );
   }
