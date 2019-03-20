@@ -8,15 +8,17 @@
   background-size: contain; */
   background-color: #717171;
   height: 500px;
-  margin-top: 5%;
   width: 150px;
   box-shadow: -2px 2px 5px #3f3e3e;
 }
 
 .controls-box > h2 {
   cursor: pointer;
-  color: #FFF;
+  color: #F0F0F0;
   text-align: center;
   padding: 10px 0px;
+}
 
+.controls-box > h2:hover {
+  opacity: 0.6;
 }

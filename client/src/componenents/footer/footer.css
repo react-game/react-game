@@ -8,5 +8,13 @@ footer {
 
 footer > h2 {
   margin-left: 40px;
+}
+
+footer > h2:hover {
+  opacity: 0.6;
+}
+
+a {
   color: #717171;
+  text-decoration: none;
 }
