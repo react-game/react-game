@@ -4,9 +4,9 @@ import './footer.css'
 class Footer extends Component {
     render() {
         return (
-            <div>
+            <footer>
                 me is FOOTER!!
-            </div>
+            </footer>
         );
     }
 }

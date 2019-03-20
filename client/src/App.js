@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css';
-import Canvas from './componenents/canvas/Canvas';
-import Navbar from './componenents/navbar/Navbar';
+import { Switch, Route } from 'react-router-dom';
+import GameDisplay from './componenents/gameDisplay/GameDisplay';
 import Footer from './componenents/footer/Footer';
+import Landing from './componenents/landing/Landing';
 
 const App = () => {
   return (
-    <div>
-      <Navbar/>
-      <Canvas/>
-      <Footer/>
+    <div className="app">
+      <Switch>
+        <Route exact path="/" component={Landing}/>
+        <Route path="/game" component={GameDisplay}/>
+      </Switch>
+        
+      <Footer />
     </div>
   );
 };
