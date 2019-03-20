@@ -1,16 +1,11 @@
-* {
-  margin:0
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Righteous', cursive;
 }
 
-.canvas-wrapper {
-  border: solid thick;
-  margin: auto;
-  /* display: grid; */
-}
-
-.ourCanvas {
-  border: solid thin;
-  margin-left: 200px
-  
-  
+h2:hover {
+  opacity: 0.6;
 }

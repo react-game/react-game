@@ -4,9 +4,11 @@ import './footer.css'
 class Footer extends Component {
     render() {
         return (
-            <div>
-                me is FOOTER!!
-            </div>
+            <footer>
+                <h2>AMY KNUDSEN</h2>
+                <h2>JESSIE JONES</h2>
+                <h2>LARA POTJEWYD</h2>
+            </footer>
         );
     }
 }
