@@ -8,10 +8,6 @@ class Landing extends Component {
     this.props.getUsers()
   }
 
-  // select = () => {
-
-  // }
-
   render() {
     let mappedUsers = this.props.usersArr.map(user => {
       return (
@@ -24,7 +20,7 @@ class Landing extends Component {
     return (
       <div className="landing">
         <h1>THIS IS OUR AMAZING GAME!</h1>
-        <h1>CLICK TO ENTER!</h1>
+        <h2>SELECT YOUR CHARACTER!</h2>
         <div className="users">{mappedUsers}</div>
         {/*please don't put anything inside this "landing-button" div!*/} 
         <div id="landing-button">
