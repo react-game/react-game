@@ -1,0 +1,19 @@
+.points-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #717171;
+  height: 500px;
+  width: 150px;
+  margin-top: 5%;
+  box-shadow: 2px 2px 5px #3f3e3e;
+
+}
+
+.points-box > h2 {
+  cursor: pointer;
+  color: #FFF;
+  text-align: center;
+  padding: 10px 0px;
+}

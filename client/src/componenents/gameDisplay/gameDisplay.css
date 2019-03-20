@@ -1,0 +1,15 @@
+.game-display {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game-display-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.game-display > h2 {
+  cursor: pointer;
+}

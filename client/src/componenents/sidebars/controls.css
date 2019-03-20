@@ -1,0 +1,22 @@
+.controls-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-image: url('../../assets/panels.svg');
+  background-repeat: no-repeat;
+  background-size: contain; */
+  background-color: #717171;
+  height: 500px;
+  margin-top: 5%;
+  width: 150px;
+  box-shadow: -2px 2px 5px #3f3e3e;
+}
+
+.controls-box > h2 {
+  cursor: pointer;
+  color: #FFF;
+  text-align: center;
+  padding: 10px 0px;
+
+}
