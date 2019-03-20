@@ -4,9 +4,19 @@ footer {
   bottom: 0;
   position: absolute;
   padding-bottom: 20px;
+  text-shadow: 5px 5px 5px var(--dark-shadow);
 }
 
 footer > h2 {
   margin-left: 40px;
-  color: #717171;
+  transition: all .5s ease;
+}
+
+footer > h2:hover {
+  opacity: 0.6;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
 }
