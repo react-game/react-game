@@ -2,15 +2,3 @@
   margin:0
 }
 
-.canvas-wrapper {
-  border: solid thick;
-  margin: auto;
-  /* display: grid; */
-}
-
-.ourCanvas {
-  border: solid thin;
-  margin-left: 200px
-  
-  
-}
