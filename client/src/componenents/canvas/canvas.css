@@ -21,7 +21,15 @@
 }
 
 #player {
-  height: 150px; 
+  height: 125px; 
   position: absolute;
+  top: 334px;
+  left: 0px;
   filter: brightness(1.1) drop-shadow(5px 5px 5px var(--dark-shadow));
+}
+
+.coins {
+  height: 40px;
+position: absolute;
+  filter: drop-shadow(5px 5px 5px var(--dark-shadow));
 }

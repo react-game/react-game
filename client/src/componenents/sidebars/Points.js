@@ -4,7 +4,6 @@ import { withInterfaceStore } from '../../shared/InterfaceStore';
 
 class Points extends Component {
   render() {
-    console.log(this.props.user.username)
     return (
       <div className="points-box">
         <h2>YOU ARE {this.props.user.username}!</h2>
