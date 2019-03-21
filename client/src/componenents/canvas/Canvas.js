@@ -40,10 +40,7 @@ class Canvas extends Component {
             })
         })
     }
-    componentWillUnmount(){
-        window.removeEventListener('keydown', this.moveIT)
-    }
-    
+
     moveIT = (e) => {
         
         if(e.keyCode === 83 || e.keyCode === 40) {
@@ -58,6 +55,7 @@ class Canvas extends Component {
         }  else if (e.keyCode === 68 || e.keyCode === 39) {
             this.moveRight()
         }
+        this.checkCollision()
     }
 
     moveDown = () => {
@@ -103,13 +101,38 @@ class Canvas extends Component {
         })
     }
     }
+
+    checkCollision = () => {
+        this.state.mapped.map((el, i) => {
+            let coin =  {
+                x: Number(el.props.style.top.substring(0, el.props.style.top.length - 2)),
+                y: Number(el.props.style.left.substring(0, el.props.style.left.length - 2)),
+                height: 20,
+                width: 20
+            }
+            let player =  {
+                x: Number(document.getElementById('player').style.top.substring(0, el.props.style.top.length - 2)),
+                y: Number(document.getElementById('player').style.left.substring(0, el.props.style.left.length - 2)),
+                height: 120,
+                width: 70
+            }
+
+            if (coin.x < player.x + player.width &&
+                coin.x + coin.width > player.x &&
+                coin.y < player.y + player.height &&
+                coin.y + coin.height > player.y) {
+            
+                // document.getElementsByClassName('coins')[i]
+                // document.getElementsByClassName('coins')[i].classList.add('remove')
+                this.props.incrementPoints()
+            }
+        }) 
+
+    }
     
 
     render() {
-        this.state.mapped.forEach(el => {
-            return console.log('top:', el.props.style.top.substring(0, el.props.style.top.length - 2), 'left:', el.props.style.left.substring(0, el.props.style.left.length - 2))
-        })
-        return (
+            return (
             <div className="canvas-wrapper">
                 <img src={this.props.user.imgUrl} id="player" alt="player"/>
                 {this.state.mapped}

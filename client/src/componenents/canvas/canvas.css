@@ -33,3 +33,7 @@
 position: absolute;
   filter: drop-shadow(5px 5px 5px var(--dark-shadow));
 }
+
+.remove {
+  display: none;
+}
