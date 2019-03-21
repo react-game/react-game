@@ -6,23 +6,20 @@ class Enemy extends Component {
 
         this.state = {
             left:0,
-            top:310
+            top:0
         }
     }
-
+    //starts movement interval on load
     componentDidMount() {
         this.trigger()
     }
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
     trigger() {
         setInterval(() => { 
             this.randomMovement()
-        }, 1000);
+        }, 150);
     }
-
+    //picks a random direction and moves
     randomMovement = () => {
         let myNum = Math.floor(Math.random()*4) + 1
         if (myNum === 1){
@@ -35,25 +32,26 @@ class Enemy extends Component {
             this.moveRight()
         }
     }
-
-
+   
     moveDown = () => {
-        console.log('should move down')
+        console.log('should move up')
         if(this.state.top < 310) {
-            this.setState(prevState => ({
-                top: prevState.top + 5
-            }), () => {
-                const enemy = document.getElementById('enemy')
-                enemy.style.top = `${this.state.top}px`
-            })
+        this.setState(prevState => ({
+            top: prevState.top + 10
+        }), () => {
+            const enemy = document.getElementById('enemy')
+            enemy.style.top = `${this.state.top}px`
+        })
         }
     }
+       
+    
 
     moveUp = () => {
         console.log('should move up')
         if(this.state.top > 0) {
         this.setState(prevState => ({
-            top: prevState.top - 5
+            top: prevState.top - 10
         }), () => {
             const enemy = document.getElementById('enemy')
             enemy.style.top = `${this.state.top}px`
@@ -65,7 +63,7 @@ class Enemy extends Component {
         console.log('should move right')
         if(this.state.left < 310) {
         this.setState(prevState => ({
-            left: prevState.left + 5
+            left: prevState.left + 10
         }), () => {
             const enemy = document.getElementById('enemy')
             enemy.style.left = `${this.state.left}px`
@@ -77,7 +75,7 @@ class Enemy extends Component {
         console.log('should move left')
         if(this.state.left > 0) {
         this.setState(prevState => ({
-            left: prevState.left - 5
+            left: prevState.left - 10
         }), () => {
             const enemy = document.getElementById('enemy')
             enemy.style.left = `${this.state.left}px`
@@ -86,7 +84,7 @@ class Enemy extends Component {
     }
     render() {
         return (
-            <div id="enemy" onClick={this.moveRight}>
+            <div id="enemy" onClick={this.randomMovement}>
                 
             </div>
         );
