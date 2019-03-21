@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.canvas-wrapper {
+  width: 500px;
+  height: 500px;
+  margin: 0px 50px;
+  background-color: #292727;
+  position: relative;
+  border: 20px solid var(--secondary-color);
+  box-shadow: 5px 5px 8px var(--dark-shadow), -5px -5px 8px var(--dark-shadow);
+}
+
+#box {
+  border: 30px solid var(--secondary-color);
+  width: 500px;
+  height: 500px;
+  box-shadow: 5px 5px 8px var(--dark-shadow), -5px -5px 8px var(--dark-shadow); 
+}
+
+#player {
+  height: 125px; 
+  position: absolute;
+<<<<<<< HEAD
+  top: 334px;
+=======
+  top: 335px;
+>>>>>>> master
+  left: 0px;
+  filter: brightness(1.1) drop-shadow(5px 5px 5px var(--dark-shadow));
+}
+
+.coins {
+  height: 40px;
+position: absolute;
+  filter: drop-shadow(5px 5px 5px var(--dark-shadow));
+}
