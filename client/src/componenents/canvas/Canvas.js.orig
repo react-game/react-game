@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import './canvas.css';
 import { withInterfaceStore } from '../../shared/InterfaceStore';
-import Enemy from './Enemy'
 import fish from '../../assets/fish2.png';
-
 class Canvas extends Component {
     constructor() {
         super()
         this.state = {
             left: 0,
-            top: 400,
+<<<<<<< HEAD
+            top: 334,
             coins: [],
-            fishesInBox: []
+            mapped: []
+=======
+            top: 334
+>>>>>>> master
         }
     }
 
@@ -19,11 +21,8 @@ class Canvas extends Component {
         window.addEventListener('keydown', this.moveIT)
         this.addCoins()
     }
-    componentWillUnmount(){
-        window.removeEventListener('keydown', this.moveIT)
-    }
 
-    componentWillUnmount() {
+    componentWillUnmount(){
         window.removeEventListener('keydown', this.moveIT)
     }
 
@@ -39,16 +38,18 @@ class Canvas extends Component {
     }
 
     showCoins = () => {
-        this.setState(prevState => {
-            return {
-                fishesInBox: prevState.coins.map((el, i) => {
-                    return <img key={i} className="coins" src={fish} style={{top: `${Math.floor(Math.random() * 400)}px`, left: `${Math.floor(Math.random() * 400)}px`, position: "absolute"}} alt="get points here!"/>
-                    })
-            }
+        this.setState({
+            mapped: this.state.coins.map((el, i) => {
+            return <img key={i} src={fish} className="coins" style={{top: `${Math.floor(Math.random() * 400)}px`, left: `${Math.floor(Math.random() * 400)}px`, position: "absolute"}} alt="get points here!"/>
+            })
         })
     }
-
+    componentWillUnmount(){
+        window.removeEventListener('keydown', this.moveIT)
+    }
+    
     moveIT = (e) => {
+        
         if(e.keyCode === 83 || e.keyCode === 40) {
             this.moveDown()
 
@@ -61,13 +62,12 @@ class Canvas extends Component {
         }  else if (e.keyCode === 68 || e.keyCode === 39) {
             this.moveRight()
         }
-        this.checkCollision()
     }
 
     moveDown = () => {
-        if(this.state.top < 400) {
+        if(this.state.top < 334) {
             this.setState(prevState => ({
-                top: prevState.top + 15
+                top: prevState.top + 10
             }), () => {
                 const player = document.getElementById('player')
                 player.style.top = `${this.state.top}px`
@@ -78,7 +78,7 @@ class Canvas extends Component {
     moveUp = () => {
         if(this.state.top > 0) {
         this.setState(prevState => ({
-            top: prevState.top - 15
+            top: prevState.top - 10
         }), () => {
             const player = document.getElementById('player')
             player.style.top = `${this.state.top}px`
@@ -87,9 +87,9 @@ class Canvas extends Component {
     }
 
     moveRight = () => {
-        if(this.state.left < 400) {
+        if(this.state.left < 334) {
         this.setState(prevState => ({
-            left: prevState.left + 15
+            left: prevState.left + 10
         }), () => {
             const player = document.getElementById('player')
             player.style.left = `${this.state.left}px`
@@ -100,44 +100,27 @@ class Canvas extends Component {
     moveLeft = () => {
         if(this.state.left > 0) {
         this.setState(prevState => ({
-            left: prevState.left - 15
+            left: prevState.left - 10
         }), () => {
             const player = document.getElementById('player')
             player.style.left = `${this.state.left}px`
         })
     }
     }
-
-    checkCollision = () => {
-        this.state.fishesInBox.map((el, i) => {
-            let coin =  {
-                y: Number(el.props.style.top.substring(0, el.props.style.top.length - 2)),
-                x: Number(el.props.style.left.substring(0, el.props.style.left.length - 2))
-            }
-            let player =  {
-                y: Number(document.getElementById('player').style.top.substring(0, document.getElementById('player').style.top.length - 2)),
-                x: Number(document.getElementById('player').style.left.substring(0, document.getElementById('player').style.left.length - 2))
-            }
-
-            if ((Math.abs(coin.x - player.x) <= 30) && (Math.abs(coin.y - player.y) <= 30)) {
-                this.setState(prevState => ({
-                    fishesInBox: prevState.fishesInBox.filter(fish => {
-                        return fish.key !== el.key
-                    })
-                }))
-            this.props.incrementPoints()
-            }
-        }) 
-
-    }
     
 
     render() {
-            return (
+        this.state.mapped.forEach(el => {
+            return console.log('top:', el.props.style.top.substring(0, el.props.style.top.length - 2), 'left:', el.props.style.left.substring(0, el.props.style.left.length - 2))
+        })
+        return (
             <div className="canvas-wrapper">
-                <Enemy/>
+<<<<<<< HEAD
                 <img src={this.props.user.imgUrl} id="player" alt="player"/>
-                {this.state.fishesInBox}
+                {this.state.mapped}
+=======
+                <img src={this.props.user.imgUrl} alt="" id="player"></img>
+>>>>>>> master
             </div>
         );
     }

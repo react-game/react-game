@@ -21,26 +21,19 @@
 }
 
 #player {
-  height: 60px;
+  height: 125px; 
   position: absolute;
-  top: 400px;
+<<<<<<< HEAD
+  top: 334px;
+=======
+  top: 335px;
+>>>>>>> master
   left: 0px;
   filter: brightness(1.1) drop-shadow(5px 5px 5px var(--dark-shadow));
-  top: 310px;
-  left: 0px;
-}
-
-#enemy {
-  height: 100px;
-  width: 100px;
-  position: absolute;
-  top:0px;
-  left:0px;
-  background-color: red
 }
 
 .coins {
-  height: 30px;
-  position: absolute;
+  height: 40px;
+position: absolute;
   filter: drop-shadow(5px 5px 5px var(--dark-shadow));
 }

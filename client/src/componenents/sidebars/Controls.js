@@ -8,6 +8,7 @@ class Controls extends Component {
             <div className="controls-box">
                 {/* <h2>START</h2> */}
                 <h2 onClick={() => this.props.history.push("/")}>RE-SELECT PLAYER</h2>
+                
             </div>
         );
     }
