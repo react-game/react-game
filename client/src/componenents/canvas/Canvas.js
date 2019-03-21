@@ -6,14 +6,17 @@ class Canvas extends Component {
         super()
         this.state = {
             left: 0,
-            top: 0
+            top: 334
         }
     }
 
     componentDidMount() {
         window.addEventListener('keydown', this.moveIT)
     }
-
+    componentWillUnmount(){
+        window.removeEventListener('keydown', this.moveIT)
+    }
+    
     moveIT = (e) => {
         
         if(e.keyCode === 83 || e.keyCode === 40) {
@@ -31,9 +34,9 @@ class Canvas extends Component {
     }
 
     moveDown = () => {
-        if(this.state.top < 310) {
+        if(this.state.top < 334) {
             this.setState(prevState => ({
-                top: prevState.top + 5
+                top: prevState.top + 10
             }), () => {
                 const player = document.getElementById('player')
                 player.style.top = `${this.state.top}px`
@@ -44,7 +47,7 @@ class Canvas extends Component {
     moveUp = () => {
         if(this.state.top > 0) {
         this.setState(prevState => ({
-            top: prevState.top - 5
+            top: prevState.top - 10
         }), () => {
             const player = document.getElementById('player')
             player.style.top = `${this.state.top}px`
@@ -53,9 +56,9 @@ class Canvas extends Component {
     }
 
     moveRight = () => {
-        if(this.state.left < 310) {
+        if(this.state.left < 334) {
         this.setState(prevState => ({
-            left: prevState.left + 5
+            left: prevState.left + 10
         }), () => {
             const player = document.getElementById('player')
             player.style.left = `${this.state.left}px`
@@ -66,7 +69,7 @@ class Canvas extends Component {
     moveLeft = () => {
         if(this.state.left > 0) {
         this.setState(prevState => ({
-            left: prevState.left - 5
+            left: prevState.left - 10
         }), () => {
             const player = document.getElementById('player')
             player.style.left = `${this.state.left}px`
@@ -79,7 +82,7 @@ class Canvas extends Component {
         console.log(this.props.user.imgUrl)
         return (
             <div className="canvas-wrapper">
-                <img src={this.props.user.imgUrl}  id="player"></img>
+                <img src={this.props.user.imgUrl} alt="" id="player"></img>
             </div>
         );
     }
