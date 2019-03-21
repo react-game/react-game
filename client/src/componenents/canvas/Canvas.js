@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './canvas.css';
 import { withInterfaceStore } from '../../shared/InterfaceStore';
+import Enemy from './Enemy'
 import fish from '../../assets/fish2.png';
 
 class Canvas extends Component {
@@ -17,6 +18,9 @@ class Canvas extends Component {
     componentDidMount() {
         window.addEventListener('keydown', this.moveIT)
         this.addCoins()
+    }
+    componentWillUnmount(){
+        window.removeEventListener('keydown', this.moveIT)
     }
 
     componentWillUnmount() {
@@ -131,6 +135,7 @@ class Canvas extends Component {
     render() {
             return (
             <div className="canvas-wrapper">
+                <Enemy/>
                 <img src={this.props.user.imgUrl} id="player" alt="player"/>
                 {this.state.fishesInBox}
             </div>
