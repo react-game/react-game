@@ -7,7 +7,7 @@ class InterfaceStore extends Component {
         super()
         this.state = {
             usersArr: [],
-            user: []
+            user: {}
         }
     }
 
@@ -18,9 +18,12 @@ class InterfaceStore extends Component {
     }
 
     selectUser = id => {
-        let selected = this.state.usersArr.filter(user => user._id === id)
-        this.setState({
-            user: selected
+        this.state.usersArr.map((user, i) => {
+            document.getElementsByClassName('user-card')[i].classList.remove('overlay')
+            return user._id !== id ? document.getElementsByClassName('user-card')[i].classList.add('overlay') :
+                this.setState({
+                    user: user
+            })
         })
     }
 
@@ -42,6 +45,6 @@ export default InterfaceStore;
 export function withInterfaceStore(C){
     return props =>
         <Consumer>
-            {value => <C {...value}{...props}/>}
+            {value => <C {...value} {...props}/>}
         </Consumer>
 }

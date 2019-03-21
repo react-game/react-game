@@ -5,13 +5,13 @@
   flex-direction: column;
   background-color: var(--secondary-color);
   height: 500px;
-  width: 150px;
+  width: 180px;
   box-shadow: 5px 5px 5px var(--dark-shadow);  
 }
 
 .points-box > h2 {
   color: var(--text-color);
   text-align: center;
-  padding: 10px 0px;
+  padding: 10px 10px;
   text-shadow: 2px 2px 2px var(--light-shadow);
 }

@@ -1,11 +1,14 @@
 .landing {
   color: var(--text-color);
-  width: 80vw;
+  width: 90vw;
   height: 80vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+}
+.overlay {
+  filter: opacity(0.2);
 }
 
 .landing > h1 {

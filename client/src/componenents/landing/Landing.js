@@ -11,7 +11,7 @@ class Landing extends Component {
   render() {
     let mappedUsers = this.props.usersArr.map(user => {
       return (
-        <div key={user._id} onClick={() => this.props.selectUser(user._id)}className="user-card">
+        <div key={user._id} onClick={() => this.props.selectUser(user._id)} className="user-card">
           <img src={user.imgUrl} alt=""/>
           <h2>{user.username}</h2>
         </div>

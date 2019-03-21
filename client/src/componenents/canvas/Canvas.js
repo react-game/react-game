@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './canvas.css';
-
+import { withInterfaceStore } from '../../shared/InterfaceStore';
 class Canvas extends Component {
     constructor() {
         super()
@@ -31,13 +31,12 @@ class Canvas extends Component {
     }
 
     moveDown = () => {
-        if(this.state.top < 450) {
+        if(this.state.top < 310) {
             this.setState(prevState => ({
                 top: prevState.top + 5
             }), () => {
                 const player = document.getElementById('player')
                 player.style.top = `${this.state.top}px`
-            console.log(this.state.left)
             })
         }
     }
@@ -54,7 +53,7 @@ class Canvas extends Component {
     }
 
     moveRight = () => {
-        if(this.state.left < 450) {
+        if(this.state.left < 310) {
         this.setState(prevState => ({
             left: prevState.left + 5
         }), () => {
@@ -77,12 +76,13 @@ class Canvas extends Component {
     
 
     render() {
+        console.log(this.props.user.imgUrl)
         return (
-            <div className="canvas-wrapper" style={{position: "relative"}}>
-                <div id="player"></div>
+            <div className="canvas-wrapper">
+                <img src={this.props.user.imgUrl}  id="player"></img>
             </div>
         );
     }
 }
 
-export default Canvas;
+export default withInterfaceStore(Canvas);
