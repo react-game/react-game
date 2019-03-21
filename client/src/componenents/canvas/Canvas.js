@@ -1,17 +1,44 @@
 import React, { Component } from 'react';
 import './canvas.css';
 import { withInterfaceStore } from '../../shared/InterfaceStore';
+import fish from '../../assets/fish2.png';
 class Canvas extends Component {
     constructor() {
         super()
         this.state = {
             left: 0,
-            top: 334
+            top: 334,
+            coins: [],
+            mapped: []
         }
     }
 
     componentDidMount() {
         window.addEventListener('keydown', this.moveIT)
+        this.addCoins()
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener('keydown', this.moveIT)
+    }
+
+    addCoins = () => {
+        let amount = Math.floor(Math.random() * 10) + 5
+        for(var i = 0; i < amount; i++) {
+            this.setState(prevState => ({
+                coins: [i, ...prevState.coins]
+            }), () => {
+                this.showCoins()
+            })
+        }
+    }
+
+    showCoins = () => {
+        this.setState({
+            mapped: this.state.coins.map((el, i) => {
+            return <img key={i} src={fish} className="coins" style={{top: `${Math.floor(Math.random() * 400)}px`, left: `${Math.floor(Math.random() * 400)}px`, position: "absolute"}} alt="get points here!"/>
+            })
+        })
     }
     componentWillUnmount(){
         window.removeEventListener('keydown', this.moveIT)
@@ -79,10 +106,13 @@ class Canvas extends Component {
     
 
     render() {
-        console.log(this.props.user.imgUrl)
+        this.state.mapped.forEach(el => {
+            return console.log('top:', el.props.style.top.substring(0, el.props.style.top.length - 2), 'left:', el.props.style.left.substring(0, el.props.style.left.length - 2))
+        })
         return (
             <div className="canvas-wrapper">
-                <img src={this.props.user.imgUrl} alt="" id="player"></img>
+                <img src={this.props.user.imgUrl} id="player" alt="player"/>
+                {this.state.mapped}
             </div>
         );
     }
