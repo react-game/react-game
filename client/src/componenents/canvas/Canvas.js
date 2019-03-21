@@ -40,7 +40,10 @@ class Canvas extends Component {
             })
         })
     }
-
+    componentWillUnmount(){
+        window.removeEventListener('keydown', this.moveIT)
+    }
+    
     moveIT = (e) => {
         
         if(e.keyCode === 83 || e.keyCode === 40) {
