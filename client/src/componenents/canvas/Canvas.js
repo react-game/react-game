@@ -1,52 +1,85 @@
 import React, { Component } from 'react';
 import './canvas.css';
-import KeyManager from './KeyManager';
-
-
-
 
 class Canvas extends Component {
-    constructor(props){
-        super(props)
-        this.canvasRef = React.createRef()
+    constructor() {
+        super()
         this.state = {
-            //imports the methods from the KeyManager.  They are
-            input: new KeyManager(),
+            left: 0,
+            top: 0
         }
     }
-    
-    //when the app loads, it calls the bindkeys function (from KeyManager) and binds WSAD and Arrows.
-    componentDidMount(){
-        this.state.input.bindKeys();
-        const canvas = this.canvasRef.current;
-        const context = canvas.getContext('2d');
-        context.fillRect(0, 0, canvas.width, canvas.height)        
+
+    componentDidMount() {
+        window.addEventListener('keydown', this.moveIT)
     }
 
-    
+    moveIT = (e) => {
+        
+        if(e.keyCode === 83 || e.keyCode === 40) {
+            this.moveDown()
 
-    //Called before the component closes.  It unbinds the WSAD and Arrow keys.
-    componentWillUnmount(){
-        this.state.input.unbindKeys()
-    }
-    update(keys){
-        if (keys.right){
-            this.posistion.x += this.speed;
-        }else if (keys.left){
-            this.posistion.x -= this.speed;
-        }else if (keys.up){
-            this.posistion.y += this.speed;
-        }else if (keys.down){
-            this.posistion.y -= this.speed;
+        } else if (e.keyCode === 38 || e.keyCode === 87) {
+            this.moveUp()
+
+        }  else if (e.keyCode === 37 || e.keyCode === 65) {
+            this.moveLeft()
+
+        }  else if (e.keyCode === 68 || e.keyCode === 39) {
+            this.moveRight()
         }
     }
-    
 
+    moveDown = () => {
+        if(this.state.top < 450) {
+            this.setState(prevState => ({
+                top: prevState.top + 5
+            }), () => {
+                const player = document.getElementById('player')
+                player.style.top = `${this.state.top}px`
+            console.log(this.state.left)
+            })
+        }
+    }
+
+    moveUp = () => {
+        if(this.state.top > 0) {
+        this.setState(prevState => ({
+            top: prevState.top - 5
+        }), () => {
+            const player = document.getElementById('player')
+            player.style.top = `${this.state.top}px`
+        })
+        }
+    }
+
+    moveRight = () => {
+        if(this.state.left < 450) {
+        this.setState(prevState => ({
+            left: prevState.left + 5
+        }), () => {
+            const player = document.getElementById('player')
+            player.style.left = `${this.state.left}px`
+        })
+    }
+    }
+
+    moveLeft = () => {
+        if(this.state.left > 0) {
+        this.setState(prevState => ({
+            left: prevState.left - 5
+        }), () => {
+            const player = document.getElementById('player')
+            player.style.left = `${this.state.left}px`
+        })
+    }
+    }
+    
 
     render() {
         return (
-            <div className="canvas-wrapper">
-                <canvas ref={this.canvasRef} width="500" height="500" className="ourCanvas"/>
+            <div className="canvas-wrapper" style={{position: "relative"}}>
+                <div id="player"></div>
             </div>
         );
     }
