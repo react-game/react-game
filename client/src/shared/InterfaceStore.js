@@ -7,9 +7,11 @@ class InterfaceStore extends Component {
         super()
         this.state = {
             usersArr: [],
-            user: {}
+            user: {},
+            points: 0
         }
     }
+    
 
     getUsers = () => {
         axios.get("/users").then(res => {
@@ -27,11 +29,18 @@ class InterfaceStore extends Component {
         })
     }
 
+    incrementPoints = () => {
+        this.setState(prevState => ({
+            points: prevState.points += 5
+        }))
+    }
+
     render() {
         return (
             <Provider value={{
                 getUsers: this.getUsers,
                 selectUser: this.selectUser,
+                incrementPoints: this.incrementPoints,
                 ...this.state
             }}>
                 {this.props.children}
