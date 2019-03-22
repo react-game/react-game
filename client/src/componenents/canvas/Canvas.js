@@ -11,7 +11,7 @@ class Canvas extends Component {
             left: 0,
             top: 400,
             fishesToDisplay: [],
-            intervalSpeed: 30
+            intervalSpeed: 50
         }
     }
 
@@ -41,6 +41,7 @@ class Canvas extends Component {
         })
     }
 
+    //Keybinding for WSAD and Arrow keys.
     movePlayer = (e) => {
         if(e.keyCode === 83 || e.keyCode === 40) {
             this.moveDown()
@@ -57,6 +58,7 @@ class Canvas extends Component {
         this.checkCollision()
     }
 
+    //Player movement functions
     moveDown = () => {
         if(this.state.top < 400) {
             this.setState(prevState => ({
@@ -101,23 +103,25 @@ class Canvas extends Component {
         }
     }
 
+
+    //Removing the 'px' and changing str to number so that we can read the position as an X,Y coordinate of each fish.
     checkCollision = () => {
-        this.state.fishesToDisplay.forEach(fish => {
-            let coin =  {
-                // Removing the 'px' and changing str to number
-                // for comparison in following if statement
-                y: Number(fish.props.style.top.substring(0, fish.props.style.top.length - 2)),
-                x: Number(fish.props.style.left.substring(0, fish.props.style.left.length - 2))
+        this.state.fishesToDisplay.forEach(item => {
+            let fish =  {
+                y: Number(item.props.style.top.substring(0, item.props.style.top.length - 2)),
+                x: Number(item.props.style.left.substring(0, item.props.style.left.length - 2))
             }
             let player =  {
                 y: this.state.top,
                 x: this.state.left
             }
 
-            if ((Math.abs(coin.x - player.x) <= 35) && (Math.abs(coin.y - player.y) <= 35)) {
+            //Checks player postion vs fish, if it's within range, it filters out that fish from the fishToDisplay array.
+            //Also adds points.
+            if ((Math.abs(fish.x - player.x) <= 35) && (Math.abs(fish.y - player.y) <= 35)) {
                 this.setState(prevState => ({
                     fishesToDisplay: prevState.fishesToDisplay.filter(remainingFish => {
-                        return remainingFish.key !== fish.key
+                        return remainingFish.key !== item.key
                     })
                 }))
             this.props.incrementPoints()
