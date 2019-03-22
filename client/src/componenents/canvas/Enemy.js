@@ -63,17 +63,17 @@ class Enemy extends Component {
         else if ((playerLeft > left) && (playerTop === top)){
                 this.moveRight()
         }
-        //Checks to see if enemy reaches player
+        //Checks to see if enemy reaches player.
         this.checkCollision()
         //Stops interval to allow state to update interval speed.
         clearInterval(this.state.intervalID)
-        //Runs trigger with same speed, or new speed if updated.
+        //Runs trigger/interval with same speed, or with new speed if updated.
         this.trigger();
     }
 
     //Enemy movement.  If statement values are based off the size of the game canvas.
     moveDown = () => {
-        if(this.state.top < 310) {
+        if(this.state.top < 380) {
         this.setState(prevState => ({
             top: prevState.top + 1
         }), () => {
@@ -95,7 +95,7 @@ class Enemy extends Component {
     }
 
     moveRight = () => {
-        if(this.state.left < 310) {
+        if(this.state.left < 380) {
         this.setState(prevState => ({
             left: prevState.left + 1
         }), () => {
@@ -119,7 +119,7 @@ class Enemy extends Component {
     //Checks player position against enemy posistion and if they are within a specific range, it route's to endgame page.
     checkCollision = () => {
         const { playerTop, playerLeft } = this.props
-        if ((Math.abs(this.state.top - playerTop) <= 30) && (Math.abs(this.state.left - playerLeft) <= 30)) {
+        if ((Math.abs((playerTop + 30) - (this.state.top + 40)) <= 55) && (Math.abs((playerLeft + 30) - (this.state.left + 40)) <= 55)) {
             setTimeout(() => {
                 this.props.history.push('/gameover')     
             }, 500)
