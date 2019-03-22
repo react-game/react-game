@@ -114,9 +114,9 @@ class Enemy extends Component {
     checkCollision = () => {
         const { playerTop, playerLeft } = this.props
         if ((Math.abs(this.state.top - playerTop) <= 30) && (Math.abs(this.state.left - playerLeft) <= 30)) {
-            setTimeout(() => {
-                this.props.history.push('/gameover')     
-            }, 500)
+            // setTimeout(() => {
+            //     this.props.history.push('/gameover')     
+            // }, 500)
         }
     }
 

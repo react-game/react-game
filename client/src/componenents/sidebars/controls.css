@@ -12,15 +12,11 @@
   box-shadow: -5px 5px 5px var(--dark-shadow);  
 }
 
-.controls-box > h2 {
-  cursor: pointer;
+.controls-box > h3 {
   color: var(--text-color);
   text-align: center;
   padding: 10px 10px;
   text-shadow: 2px 2px 2px var(--light-shadow);
   transition: all .5s ease;
-}
-
-.controls-box > h2:hover {
-  opacity: 0.6;
+  line-height: 36px;
 }

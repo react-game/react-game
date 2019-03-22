@@ -1,0 +1,35 @@
+.death-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.death-page > h1 {
+  text-shadow: 5px 5px 5px var(--dark-shadow);
+  color: var(--text-color);
+}
+
+.death-page > h2 {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 10px;
+  margin: 20px 0px;
+  width: 50%;
+  box-shadow: 5px 8px 10px var(--dark-shadow), -5px 10px 10px var(--dark-shadow);
+  transition: all .5s ease;
+  text-shadow: 2px 2px 2px var(--light-shadow);
+}
+
+.death-page > h2:hover {
+  opacity: 0.9;
+}
+
+.death-page:hover {
+  opacity: 0.8;
+}
+
+.death-page:active {
+  box-shadow: none;
+}

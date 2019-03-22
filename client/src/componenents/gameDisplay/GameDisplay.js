@@ -11,7 +11,7 @@ class GameDisplay extends Component {
         <div className="game-display-box">
           <Controls history={this.props.history}/>
           <Canvas history={this.props.history}/>
-          <Points />
+          <Points history={this.props.history}/>
         </div>
       </div>
     );

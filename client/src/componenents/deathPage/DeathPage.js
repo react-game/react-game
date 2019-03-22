@@ -1,5 +1,6 @@
 import React from 'react';
 import { withInterfaceStore } from '../../shared/InterfaceStore';
+import './deathPage.css';
 
 const DeathPage = (props) => {
 
@@ -9,9 +10,9 @@ const DeathPage = (props) => {
     }
 
   return (
-    <div>
+    <div className="death-page">
       <h1>YOU DIED, BUT YOU HAD {props.points} POINTS!</h1>
-      <button onClick={resetGame}>play again</button>
+      <h2 onClick={resetGame}>PLAY AGAIN!</h2>
     </div>
   );
 };

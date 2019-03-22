@@ -5,16 +5,12 @@ import { withInterfaceStore } from '../../shared/InterfaceStore';
 
 class Controls extends Component {
 
-    resetGame = () => {
-        this.props.history.push("/")
-        this.props.clearPoints()
-    }
-
     render() {
         return (
             <div className="controls-box">
                 {/* <h2>START</h2> */}
-                <h2 onClick={this.resetGame}>RE-SELECT PLAYER</h2>
+                
+                <h3>USE THE ARROW KEYS TO EAT THE FISH AND KEEP AWAY FROM THE DOG!</h3>
                 
             </div>
         );

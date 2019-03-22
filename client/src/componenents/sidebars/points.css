@@ -9,9 +9,27 @@
   box-shadow: 5px 5px 5px var(--dark-shadow);  
 }
 
+.points-box > img {
+  width: 140px;
+  margin-bottom: 20px;
+}
+
 .points-box > h2 {
   color: var(--text-color);
   text-align: center;
   padding: 10px 10px;
   text-shadow: 2px 2px 2px var(--light-shadow);
+}
+
+.button {
+  cursor: pointer;
+  color: var(--text-color);
+  text-align: center;
+  padding: 10px 10px;
+  text-shadow: 2px 2px 2px var(--light-shadow);
+  transition: all .5s ease;
+}
+  
+.button:hover {
+  opacity: 0.6;
 }
