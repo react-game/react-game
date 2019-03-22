@@ -19,11 +19,8 @@ class Canvas extends Component {
         window.addEventListener('keydown', this.moveIT)
         this.addCoins()
     }
-    componentWillUnmount(){
-        window.removeEventListener('keydown', this.moveIT)
-    }
 
-    componentWillUnmount() {
+    componentWillUnmount(){
         window.removeEventListener('keydown', this.moveIT)
     }
 
@@ -94,7 +91,7 @@ class Canvas extends Component {
             const player = document.getElementById('player')
             player.style.left = `${this.state.left}px`
         })
-    }
+        }
     }
 
     moveLeft = () => {
@@ -105,7 +102,7 @@ class Canvas extends Component {
             const player = document.getElementById('player')
             player.style.left = `${this.state.left}px`
         })
-    }
+        }
     }
 
     checkCollision = () => {
@@ -135,8 +132,8 @@ class Canvas extends Component {
     render() {
             return (
             <div className="canvas-wrapper">
-                <Enemy/>
-                <img src={this.props.user.imgUrl} id="player" alt="player"/>
+                <Enemy playerTop={this.state.top} playerLeft={this.state.left}/>
+                <img src={this.props.user.imgUrl} id="player" style={{top: "400px", left: "0px"}} alt="player" />
                 {this.state.fishesInBox}
             </div>
         );
