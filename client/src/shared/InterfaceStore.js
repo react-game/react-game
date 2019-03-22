@@ -9,7 +9,7 @@ class InterfaceStore extends Component {
             usersArr: [],
             user: {},
             points: 0,
-            intervalSpeed: 50
+            intervalSpeed: 50,
         }
     }
     
@@ -34,19 +34,19 @@ class InterfaceStore extends Component {
             points: prevState.points += 5
         }))
     }
-    incrementEnemySpeed = () => {
-        let {intervalSpeed} = this.state
-        let newSpeed =  Math.floor(intervalSpeed * .2)
-        console.log(intervalSpeed - newSpeed)
-        this.setState(prevState=>({
-            intervalSpeed: prevState.intervalSpeed - newSpeed
-        }))
-    }
 
     clearPoints = () => {
         this.setState({
             points: 0
         })
+    }
+
+    incrementEnemySpeed = () => {
+        let {intervalSpeed} = this.state
+        let newSpeed =  Math.floor(intervalSpeed * .2)
+        this.setState(prevState=>({
+            intervalSpeed: prevState.intervalSpeed - newSpeed
+        }))
     }
 
     render() {

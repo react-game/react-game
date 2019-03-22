@@ -11,7 +11,6 @@ class Canvas extends Component {
             left: 0,
             top: 400,
             fishesToDisplay: [],
-            intervalSpeed: 50
         }
     }
 
@@ -131,7 +130,8 @@ class Canvas extends Component {
         //If you catch all the fish, more fish generate and the Enemy gets faster to increase difficulty.
         if(this.state.fishesToDisplay.length <= 0){
             this.generateFish()
-            //incrementEnemySpeed()
+            // this.props.stopInterval()
+            this.props.incrementEnemySpeed()
         }
 
     }
@@ -141,7 +141,7 @@ class Canvas extends Component {
         return (
             <div className="canvas-wrapper">
                 {/* Our enemy, the dog */}
-                <Enemy history={this.props.history} playerTop={this.state.top} playerLeft={this.state.left} intervalSpeed={this.state.intervalSpeed} />
+                <Enemy history={this.props.history} playerTop={this.state.top} playerLeft={this.state.left}/>
 
                 {/* Our player */}
                 <img src={this.props.user.imgUrl} id="player" style={{top: "400px", left: "0px"}} alt="player" />

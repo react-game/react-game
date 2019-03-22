@@ -63,8 +63,12 @@ class Enemy extends Component {
         else if ((playerLeft > left) && (playerTop === top)){
                 this.moveRight()
         }
-        
+        //Checks to see if enemy reaches player
         this.checkCollision()
+        //Stops interval to allow state to update interval speed.
+        clearInterval(this.state.intervalID)
+        //Runs trigger with same speed, or new speed if updated.
+        this.trigger();
     }
 
     //Enemy movement.  If statement values are based off the size of the game canvas.
