@@ -128,6 +128,12 @@ class Canvas extends Component {
             }
         }) 
 
+        //If you catch all the fish, more fish generate and the Enemy gets faster to increase difficulty.
+        if(this.state.fishesToDisplay.length <= 0){
+            this.generateFish()
+            //incrementEnemySpeed()
+        }
+
     }
     
 

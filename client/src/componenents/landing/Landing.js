@@ -20,8 +20,8 @@ class Landing extends Component {
     return (
       <div className="landing">
         <h1>THIS IS OUR AMAZING GAME!</h1>
-        <h2>USE THE ARROW KEYS OR A, W, S, D TO MOVE. 
-            EAT THE FISH TO COLLECT POINTS. 
+        <h2>USE THE ARROW KEYS OR W, A, S, D TO MOVE. <br/>
+            EAT THE FISH TO COLLECT POINTS. <br/>
             KEEP AWAY FROM THE DOG TO SURVIVE!</h2>
         <h2>CHOOSE YOUR PLAYER!</h2>
         <div className="users">{mappedUsers}</div>
