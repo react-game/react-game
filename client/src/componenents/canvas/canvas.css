@@ -27,12 +27,11 @@
 }
 
 #enemy {
-  height: 100px;
-  width: 100px;
+  height: 80px;
   position: absolute;
-  top:0px;
-  left:0px;
-  background-color: red
+  z-index: 5;
+  top: 0px;
+  left: 0px;
 }
 
 .coins {

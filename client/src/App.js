@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import GameDisplay from './componenents/gameDisplay/GameDisplay';
 import Footer from './componenents/footer/Footer';
 import Landing from './componenents/landing/Landing';
+import DeathPage from './componenents/deathPage/DeathPage';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Landing}/>
         <Route exact path="/game" component={GameDisplay}/>
+        <Route exact path="/gameover" component={DeathPage}/>
       </Switch>
         
       <Footer />

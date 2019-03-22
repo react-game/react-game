@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import enemy from '../../assets/dog.png';
 
 class Enemy extends Component {
     constructor(){
@@ -6,7 +7,8 @@ class Enemy extends Component {
 
         this.state = {
             left:0,
-            top:0
+            top:0,
+            intervalID: ''
         }
     }
     //starts movement interval on load
@@ -14,19 +16,22 @@ class Enemy extends Component {
         this.trigger()
     }
 
-    trigger() {
-        setInterval(() => { 
-            this.randomMovement()
-        }, 50);
+    componentWillUnmount() {
+        clearInterval(this.state.intervalID)
+    }
+    trigger = () => {
+        this.setState({
+            intervalID: setInterval(() => { 
+                this.randomMovement()
+            }, `${this.props.intervalSpeed}`)
+        })
     }
 
     //picks a random direction and moves
     randomMovement = () => {
         const { playerTop, playerLeft } = this.props 
         const { left, top } = this.state 
-        // console.log(playerTop)      
         if((playerLeft < left) && (playerTop < top) ){
-            console.log(playerLeft < left && playerTop < top)
                 this.moveUp()
                 this.moveLeft()
         }
@@ -57,7 +62,7 @@ class Enemy extends Component {
         
         this.checkCollision()
     }
-   
+
     moveDown = () => {
         // console.log('should move up')
         if(this.state.top < 310) {
@@ -109,16 +114,15 @@ class Enemy extends Component {
     checkCollision = () => {
         const { playerTop, playerLeft } = this.props
         if ((Math.abs(this.state.top - playerTop) <= 30) && (Math.abs(this.state.left - playerLeft) <= 30)) {
-            console.log("YOU DEAD")
+            setTimeout(() => {
+                this.props.history.push('/gameover')     
+            }, 500)
         }
     }
 
     render() {
-        // console.log(this.props)
         return (
-            <div id="enemy" onClick={this.randomMovement}>
-                
-            </div>
+            <img id="enemy" src={enemy} />
         );
     }
 }
