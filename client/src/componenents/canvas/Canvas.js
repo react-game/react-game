@@ -114,10 +114,10 @@ class Canvas extends Component {
                 y: this.state.top,
                 x: this.state.left
             }
-
+            // ((Math.abs(fish.x - player.x) <= 35) && (Math.abs(fish.y - player.y) <= 35))
             //Checks player postion vs fish, if it's within range, it filters out that fish from the fishToDisplay array.
             //Also adds points.
-            if ((Math.abs(fish.x - player.x) <= 35) && (Math.abs(fish.y - player.y) <= 35)) {
+            if ((Math.abs((fish.x +15)- (player.x + 30)) <= 40) && (Math.abs((fish.y + 15)- (player.y + 30)) <= 40)) {
                 this.setState(prevState => ({
                     fishesToDisplay: prevState.fishesToDisplay.filter(remainingFish => {
                         return remainingFish.key !== item.key
