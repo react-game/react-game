@@ -1,24 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './controls.css'
 import { withInterfaceStore } from '../../shared/InterfaceStore';
 
+const Controls = (props) => {
 
-class Controls extends Component {
-
-    resetGame = () => {
-        this.props.history.push("/")
-        this.props.clearPoints()
+    const resetGame = () => {
+        props.history.push("/")
+        props.clearPoints()
     }
 
-    render() {
-        return (
-            <div className="controls-box">
-                {/* <h2>START</h2> */}
-                <h2 onClick={this.resetGame}>RE-SELECT PLAYER</h2>
-                
-            </div>
-        );
-    }
+    return (
+        <div className="controls-box">
+            
+            <h3>
+                USE THE ARROW KEYS OR A, W, S, D TO MOVE. 
+                <br></br> EAT THE FISH TO COLLECT POINTS. 
+                <br></br> KEEP AWAY FROM THE DOG TO SURVIVE!
+            </h3>
+
+            <h2 className="button" onClick={resetGame}>RE-START GAME</h2>
+            
+        </div>
+    );
 }
 
 export default withInterfaceStore(Controls);

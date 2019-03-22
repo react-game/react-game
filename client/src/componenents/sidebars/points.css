@@ -9,6 +9,11 @@
   box-shadow: 5px 5px 5px var(--dark-shadow);  
 }
 
+.points-box > img {
+  height: 150px;
+  padding: 10px 10px;
+}
+
 .points-box > h2 {
   color: var(--text-color);
   text-align: center;

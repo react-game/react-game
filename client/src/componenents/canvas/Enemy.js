@@ -64,7 +64,6 @@ class Enemy extends Component {
     }
 
     moveDown = () => {
-        // console.log('should move up')
         if(this.state.top < 310) {
         this.setState(prevState => ({
             top: prevState.top + 1
@@ -76,7 +75,6 @@ class Enemy extends Component {
     }
 
     moveUp = () => {
-        // console.log('should move up')
         if(this.state.top > 0) {
         this.setState(prevState => ({
             top: prevState.top - 1
@@ -88,7 +86,6 @@ class Enemy extends Component {
     }
 
     moveRight = () => {
-        // console.log('should move right')
         if(this.state.left < 310) {
         this.setState(prevState => ({
             left: prevState.left + 1
@@ -100,7 +97,6 @@ class Enemy extends Component {
     }
 
     moveLeft = () => {
-        // console.log('should move left')
         if(this.state.left > 0) {
         this.setState(prevState => ({
             left: prevState.left - 1
@@ -122,7 +118,7 @@ class Enemy extends Component {
 
     render() {
         return (
-            <img id="enemy" src={enemy} />
+            <img id="enemy" src={enemy} alt="avoid this guy!"/>
         );
     }
 }

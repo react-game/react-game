@@ -16,6 +16,7 @@
 }
 
 .landing > h2, .user-card > h2 {
+  color: var(--text-color2);
   text-shadow: 5px 5px 5px var(--dark-shadow);
 }
 
@@ -77,7 +78,6 @@
 }
 
 .users > .user-card:hover {
-  /* mix-blend-mode: luminosity; */
   -webkit-filter: brightness(1.1) drop-shadow(10px -10px 5px var(--dark-shadow));
   filter: brightness(1.1) drop-shadow(10px -10px 5px var(--dark-shadow));
 }

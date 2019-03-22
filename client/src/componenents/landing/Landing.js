@@ -20,7 +20,10 @@ class Landing extends Component {
     return (
       <div className="landing">
         <h1>THIS IS OUR AMAZING GAME!</h1>
-        <h2>SELECT YOUR CHARACTER!</h2>
+        <h2>USE THE ARROW KEYS OR A, W, S, D TO MOVE. 
+            EAT THE FISH TO COLLECT POINTS. 
+            KEEP AWAY FROM THE DOG TO SURVIVE!</h2>
+        <h2>CHOOSE YOUR PLAYER!</h2>
         <div className="users">{mappedUsers}</div>
         {/*please don't put anything inside this "landing-button" div!*/} 
         <div id="landing-button">
