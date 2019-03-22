@@ -16,19 +16,22 @@ class Enemy extends Component {
         this.trigger()
     }
 
-    componentWillUnmount() {
-        clearInterval(this.state.intervalID)
-    }
+    //Triggers dog movement on a timer.  Timer is incremented by "intervalSpeed" from props.
     trigger = () => {
         this.setState({
             intervalID: setInterval(() => { 
-                this.randomMovement()
+                this.trackingMovement()
             }, `${this.props.intervalSpeed}`)
         })
     }
 
-    //picks a random direction and moves
-    randomMovement = () => {
+    //stops the interval when you leave the page
+    componentWillUnmount() {
+        clearInterval(this.state.intervalID)
+    }
+
+    //Tracks player position via props and moves enemy towards player.
+    trackingMovement = () => {
         const { playerTop, playerLeft } = this.props 
         const { left, top } = this.state 
         if((playerLeft < left) && (playerTop < top) ){
@@ -63,6 +66,7 @@ class Enemy extends Component {
         this.checkCollision()
     }
 
+    //Enemy movement.  If statement values are based off the size of the game canvas.
     moveDown = () => {
         if(this.state.top < 310) {
         this.setState(prevState => ({
@@ -107,6 +111,7 @@ class Enemy extends Component {
     }
     }
 
+    //Checks player position against enemy posistion and if they are within a specific range, it route's to endgame page.
     checkCollision = () => {
         const { playerTop, playerLeft } = this.props
         if ((Math.abs(this.state.top - playerTop) <= 30) && (Math.abs(this.state.left - playerLeft) <= 30)) {
