@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import enemy from '../../assets/dog.png';
+import { withInterfaceStore } from '../../shared/InterfaceStore';
 
 class Enemy extends Component {
     constructor(){
@@ -128,4 +129,4 @@ class Enemy extends Component {
     }
 }
 
-export default Enemy;
+export default withInterfaceStore(Enemy);

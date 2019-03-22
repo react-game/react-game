@@ -8,11 +8,11 @@ class InterfaceStore extends Component {
         this.state = {
             usersArr: [],
             user: {},
-            points: 0
+            points: 0,
+            intervalSpeed: 50
         }
     }
     
-
     getUsers = () => {
         axios.get("/users").then(res => {
             this.setState({usersArr: res.data})
@@ -34,6 +34,14 @@ class InterfaceStore extends Component {
             points: prevState.points += 5
         }))
     }
+    incrementEnemySpeed = () => {
+        let {intervalSpeed} = this.state
+        let newSpeed =  Math.floor(intervalSpeed * .2)
+        console.log(intervalSpeed - newSpeed)
+        this.setState(prevState=>({
+            intervalSpeed: prevState.intervalSpeed - newSpeed
+        }))
+    }
 
     clearPoints = () => {
         this.setState({
@@ -48,6 +56,7 @@ class InterfaceStore extends Component {
                 selectUser: this.selectUser,
                 incrementPoints: this.incrementPoints,
                 clearPoints: this.clearPoints,
+                incrementEnemySpeed: this.incrementEnemySpeed,
                 ...this.state
             }}>
                 {this.props.children}
