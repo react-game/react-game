@@ -23,11 +23,7 @@
 #player {
   height: 60px;
   position: absolute;
-  top: 400px;
-  left: 0px;
   filter: brightness(1.1) drop-shadow(5px 5px 5px var(--dark-shadow));
-  top: 310px;
-  left: 0px;
 }
 
 #enemy {
