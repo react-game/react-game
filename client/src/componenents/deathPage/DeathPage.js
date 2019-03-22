@@ -11,7 +11,7 @@ const DeathPage = (props) => {
 
   return (
     <div className="death-page">
-      <h1>I'm sorry {props.user.username}, the dog got you...</h1>
+      <h1>I'm sorry, {props.user.username}, the dog got you...</h1>
       <img src={props.user.imgUrl} alt={props.user.username}/>
       <h1>You had {props.points} points</h1>
       <h1>Better luck next time!</h1>
