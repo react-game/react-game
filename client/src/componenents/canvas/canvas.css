@@ -34,7 +34,7 @@
   left: 0px;
 }
 
-.coins {
+.fish {
   height: 30px;
   position: absolute;
   filter: drop-shadow(5px 5px 5px var(--dark-shadow));
