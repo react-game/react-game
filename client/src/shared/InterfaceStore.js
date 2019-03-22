@@ -35,12 +35,19 @@ class InterfaceStore extends Component {
         }))
     }
 
+    clearPoints = () => {
+        this.setState({
+            points: 0
+        })
+    }
+
     render() {
         return (
             <Provider value={{
                 getUsers: this.getUsers,
                 selectUser: this.selectUser,
                 incrementPoints: this.incrementPoints,
+                clearPoints: this.clearPoints,
                 ...this.state
             }}>
                 {this.props.children}

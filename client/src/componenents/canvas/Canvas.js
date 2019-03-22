@@ -11,7 +11,8 @@ class Canvas extends Component {
             left: 0,
             top: 400,
             coins: [],
-            fishesInBox: []
+            fishesInBox: [],
+            intervalSpeed: 30
         }
     }
 
@@ -132,7 +133,7 @@ class Canvas extends Component {
     render() {
             return (
             <div className="canvas-wrapper">
-                <Enemy playerTop={this.state.top} playerLeft={this.state.left}/>
+                <Enemy history={this.props.history} playerTop={this.state.top} playerLeft={this.state.left} intervalSpeed={this.state.intervalSpeed} />
                 <img src={this.props.user.imgUrl} id="player" style={{top: "400px", left: "0px"}} alt="player" />
                 {this.state.fishesInBox}
             </div>
