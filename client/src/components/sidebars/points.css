@@ -12,6 +12,7 @@
 .points-box > img {
   height: 150px;
   padding: 10px 10px;
+  filter: drop-shadow(1px 1px 1px var(--light-shadow))
 }
 
 .points-box > h2 {
