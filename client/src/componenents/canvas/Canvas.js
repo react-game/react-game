@@ -61,7 +61,7 @@ class Canvas extends Component {
     moveDown = () => {
         if(this.state.top < 400) {
             this.setState(prevState => ({
-                top: prevState.top + 15
+                top: prevState.top + 20
             }), () => {
                 const player = document.getElementById('player')
                 player.style.top = `${this.state.top}px`
@@ -72,7 +72,7 @@ class Canvas extends Component {
     moveUp = () => {
         if(this.state.top > 0) {
         this.setState(prevState => ({
-            top: prevState.top - 15
+            top: prevState.top - 20
         }), () => {
             const player = document.getElementById('player')
             player.style.top = `${this.state.top}px`
@@ -83,7 +83,7 @@ class Canvas extends Component {
     moveRight = () => {
         if(this.state.left < 400) {
         this.setState(prevState => ({
-            left: prevState.left + 15
+            left: prevState.left + 20
         }), () => {
             const player = document.getElementById('player')
             player.style.left = `${this.state.left}px`
@@ -94,7 +94,7 @@ class Canvas extends Component {
     moveLeft = () => {
         if(this.state.left > 0) {
         this.setState(prevState => ({
-            left: prevState.left - 15
+            left: prevState.left - 20
         }), () => {
             const player = document.getElementById('player')
             player.style.left = `${this.state.left}px`
@@ -115,7 +115,7 @@ class Canvas extends Component {
                 x: this.state.left
             }
             // ((Math.abs(fish.x - player.x) <= 35) && (Math.abs(fish.y - player.y) <= 35))
-            //Checks player postion vs fish, if it's within range, it filters out that fish from the fishToDisplay array.
+            //Checks player position vs fish, if it's within range, it filters out that fish from the fishToDisplay array.
             //Also adds points.
             if ((Math.abs((fish.x +15)- (player.x + 30)) <= 40) && (Math.abs((fish.y + 15)- (player.y + 30)) <= 40)) {
                 this.setState(prevState => ({
