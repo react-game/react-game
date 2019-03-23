@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {withInterfaceStore} from "./../../shared/InterfaceStore"
 import './landing.css';
-
+import wasd from '../../assets/landingwasd.svg';
+import arrows from '../../assets/landingarrows.svg';
 
 class Landing extends Component {
   componentDidMount() {
@@ -19,10 +20,9 @@ class Landing extends Component {
     })
     return (
       <div className="landing">
-        <h1>THIS IS OUR AMAZING GAME!</h1>
-        <h2>USE THE ARROW KEYS OR W, A, S, D TO MOVE. <br/>
-            EAT THE FISH TO COLLECT POINTS. <br/>
-            KEEP AWAY FROM THE DOG TO SURVIVE!</h2>
+        <h1>CAT CHASE</h1>
+        <h2>USE <img src={arrows} alt="arrow keys"/> OR <img src={wasd} alt="w, a, s, d"/> TO EAT THE FISH AND COLLECT POINTS 
+        <br/>KEEP AWAY FROM THE DOG TO SURVIVE!</h2>
         <h2>CHOOSE YOUR PLAYER!</h2>
         <div className="users">{mappedUsers}</div>
         {/*please don't put anything inside this "landing-button" div!*/} 

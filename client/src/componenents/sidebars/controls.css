@@ -9,13 +9,20 @@
   box-shadow: -5px 5px 5px var(--dark-shadow);  
 }
 
-.controls-box > h3 {
+.controls-text {
+  padding: 10px 10px;
+  line-height: 26px;
+}
+
+.controls-text > h3 {
   color: var(--text-color);
   text-align: center;
-  padding: 10px 10px;
   text-shadow: 2px 2px 2px var(--light-shadow);
   transition: all .5s ease;
-  line-height: 36px;
+}
+
+.controls-text > img {
+  width: 100px;
 }
 
 .button {

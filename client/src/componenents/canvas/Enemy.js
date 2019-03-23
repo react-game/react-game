@@ -116,7 +116,7 @@ class Enemy extends Component {
     }
     }
 
-    //Checks player position against enemy posistion and if they are within a specific range, it route's to endgame page.
+    //Checks player position against enemy position and if they are within a specific range, it route's to endgame page.
     checkCollision = () => {
         const { playerTop, playerLeft } = this.props
         if ((Math.abs((playerTop + 30) - (this.state.top + 40)) <= 55) && (Math.abs((playerLeft + 30) - (this.state.left + 40)) <= 55)) {

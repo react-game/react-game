@@ -1,6 +1,8 @@
 import React from 'react';
 import './controls.css'
 import { withInterfaceStore } from '../../shared/InterfaceStore';
+import wasd from '../../assets/wasd.svg';
+import arrows from '../../assets/arrows.svg';
 
 const Controls = (props) => {
 
@@ -12,11 +14,14 @@ const Controls = (props) => {
     return (
         <div className="controls-box">
             
-            <h3>
-                USE THE ARROW KEYS OR A, W, S, D TO MOVE. 
-                <br></br> EAT THE FISH TO COLLECT POINTS. 
-                <br></br> KEEP AWAY FROM THE DOG TO SURVIVE!
-            </h3>
+            <div className="controls-text">
+                <h3>KEEP AWAY FROM THE DOG TO SURVIVE!</h3>
+                <h3>USE</h3>
+                <img src={arrows} alt="arrow keys"/> 
+                <h3>OR</h3>
+                <img src={wasd} alt="w, a, s, d"/> 
+                <h3>TO EAT THE FISH AND COLLECT POINTS </h3>
+            </div>
 
             <h2 className="button" onClick={resetGame}>RE-START GAME</h2>
             

@@ -20,6 +20,10 @@
   text-shadow: 5px 5px 5px var(--dark-shadow);
 }
 
+.landing > h2 > img {
+  width: 100px;
+}
+
 #landing-button {
   cursor: pointer;
   background-color: var(--secondary-color);
