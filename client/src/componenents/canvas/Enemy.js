@@ -122,7 +122,7 @@ class Enemy extends Component {
         if ((Math.abs((playerTop + 30) - (this.state.top + 40)) <= 55) && (Math.abs((playerLeft + 30) - (this.state.left + 40)) <= 55)) {
             setTimeout(() => {
                 this.props.history.push('/gameover')     
-            }, 500)
+            }, 100)
         }
     }
 

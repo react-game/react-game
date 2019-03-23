@@ -19,3 +19,22 @@
     --light-shadow: #333333;
   }
 
+.app > p {
+  color: var(--text-color);
+  font-size: 28px;
+  padding: 30px;
+}
+
+.app > img {
+  width: 100px;
+  margin: 30px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+  .app > img {
+    width: 250px;
+  }
+  .app > p {
+    font-size: 38px;
+  }
+}
