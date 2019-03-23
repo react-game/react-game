@@ -20,7 +20,7 @@ class Landing extends Component {
     })
     return (
       <div className="landing">
-        <h1>THIS IS OUR AMAZING GAME!</h1>
+        <h1>CAT CHASE</h1>
         <h2>USE <img src={arrows} alt="arrow keys"/> OR <img src={wasd} alt="w, a, s, d"/> TO EAT THE FISH AND COLLECT POINTS 
         <br/>KEEP AWAY FROM THE DOG TO SURVIVE!</h2>
         <h2>CHOOSE YOUR PLAYER!</h2>
