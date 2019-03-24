@@ -10,7 +10,7 @@ class Landing extends Component {
   }
 
   toggleClass = () => {
-    document.querySelectorAll('h2')[6].classList.toggle('wibble')
+    document.getElementById('choose-player').classList.toggle('wibble')
   }
 
   render() {
@@ -22,7 +22,7 @@ class Landing extends Component {
         </div>
       )
     })
-console.log(this.props.canPlay)
+    
     return (
       <div className="landing">
         <h1>CAT CHASE</h1>
