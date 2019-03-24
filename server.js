@@ -7,8 +7,9 @@ let {SERVER_PORT, MONGODB_URI} = process.env;
 
 app.use(express.json())
 
-app.use( express.static( `${__dirname}/../build` ) );
-//Line below was from the walk-through, but the server wouldn't run. Copied the line above from a previous project and it worked.
+
+app.use(express.static(`${__dirname}/../client/build`))
+//Line below was from the walk-through, but the server wouldn't run.
 // app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.use("/users", require("./routes/user-routes"))
