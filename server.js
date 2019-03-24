@@ -2,15 +2,13 @@ require("dotenv").config()
 const express = require("express")
 const mongoose = require("mongoose")
 const app = express()
+const path = require("path")
 
 let {SERVER_PORT, MONGODB_URI} = process.env;
 
 app.use(express.json())
 
-
-app.use(express.static(`${__dirname}/../client/build`))
-//Line below was from the walk-through, but the server wouldn't run.
-// app.use(express.static(path.join(__dirname, "client", "build")))
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.use("/users", require("./routes/user-routes"))
 
