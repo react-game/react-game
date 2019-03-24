@@ -5,6 +5,7 @@ import GameDisplay from './components/gameDisplay/GameDisplay';
 import Footer from './components/footer/Footer';
 import Landing from './components/landing/Landing';
 import DeathPage from './components/deathPage/DeathPage';
+import Media from "react-media";
 
 const App = () => {
   return (
