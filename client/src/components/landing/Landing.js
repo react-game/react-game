@@ -9,6 +9,10 @@ class Landing extends Component {
     this.props.getUsers()
   }
 
+  toggleClass = () => {
+    document.querySelectorAll('h2')[6].classList.toggle('wibble')
+  }
+
   render() {
     let mappedUsers = this.props.usersArr.map(user => {
       return (
@@ -18,16 +22,18 @@ class Landing extends Component {
         </div>
       )
     })
+console.log(this.props.canPlay)
     return (
       <div className="landing">
         <h1>CAT CHASE</h1>
         <h2>USE <img src={arrows} alt="arrow keys"/> OR <img src={wasd} alt="w, a, s, d"/> TO EAT THE FISH AND COLLECT POINTS 
         <br/>KEEP AWAY FROM THE DOG TO SURVIVE!</h2>
-        <h2>CHOOSE YOUR PLAYER!</h2>
         <div className="users">{mappedUsers}</div>
+
+        <h2 id="choose-player">CHOOSE YOUR PLAYER!</h2>
         {/*please don't put anything inside this "landing-button" div!*/} 
-        <div id="landing-button">
-          <h2 onClick={() => this.props.history.push("/game")}>ENTER</h2>
+        <div className="landing-button">
+          <h2 onClick={this.props.canPlay ? () => this.props.history.push("/game") : this.toggleClass}>ENTER</h2>
         </div>
       </div>
     );

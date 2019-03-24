@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
+import Media from 'react-media';
 import GameDisplay from './components/gameDisplay/GameDisplay';
 import Footer from './components/footer/Footer';
 import Landing from './components/landing/Landing';

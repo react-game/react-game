@@ -10,6 +10,7 @@ class InterfaceStore extends Component {
             user: {},
             points: 0,
             intervalSpeed: 50,
+            canPlay: false
         }
     }
     
@@ -24,7 +25,8 @@ class InterfaceStore extends Component {
             document.getElementsByClassName('user-card')[i].classList.remove('overlay')
             return user._id !== id ? document.getElementsByClassName('user-card')[i].classList.add('overlay') :
                 this.setState({
-                    user: user
+                    user: user,
+                    canPlay: true
             })
         })
     }
