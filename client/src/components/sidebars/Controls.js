@@ -7,8 +7,10 @@ import arrows from '../../assets/arrows.svg';
 const Controls = (props) => {
 
     const resetGame = () => {
+        props.resetSpeed()
         props.history.push("/")
         props.clearPoints()
+        
     }
 
     return (

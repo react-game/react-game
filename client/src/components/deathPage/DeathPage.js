@@ -5,6 +5,7 @@ import './deathPage.css';
 const DeathPage = (props) => {
 
     const resetGame = () => {
+      props.resetSpeed()
       props.history.push('/')
       props.clearPoints()
     }

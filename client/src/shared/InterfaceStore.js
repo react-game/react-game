@@ -51,6 +51,12 @@ class InterfaceStore extends Component {
         }))
     }
 
+    resetSpeed = () => {
+        this.setState({
+            intervalSpeed: 50
+        })
+    }
+
     render() {
         return (
             <Provider value={{
@@ -59,6 +65,7 @@ class InterfaceStore extends Component {
                 incrementPoints: this.incrementPoints,
                 clearPoints: this.clearPoints,
                 incrementEnemySpeed: this.incrementEnemySpeed,
+                resetSpeed: this.resetSpeed,
                 ...this.state
             }}>
                 {this.props.children}
