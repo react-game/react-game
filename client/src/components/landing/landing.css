@@ -56,6 +56,30 @@
   box-shadow: none;
 }
 
+#choose-player {
+  color: var(--text-color);
+}
+
+.wibble {
+  animation: wibble 0.8s cubic-bezier(.36,.07,.19,.97) both;
+ }
+ @keyframes wibble {
+  10%, 90% {
+   transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+   transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+   transform: translate3d(-4px, 0, 0);
+   color: #F36F9E;
+  }
+  40%, 60% {
+   transform: translate3d(4px, 0, 0);
+  }
+ }
+
 .users {
   display: flex;
   flex-direction: row;
