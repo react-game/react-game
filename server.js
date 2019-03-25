@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 const app = express()
 const path = require("path")
 
-let {SERVER_PORT, MONGODB_URI} = process.env;
+let {SERVER_PORT, PORT, MONGODB_URI} = process.env;
 
 app.use(express.json())
 
@@ -18,4 +18,4 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-app.listen(SERVER_PORT, () => console.log(`Server listening on port:${SERVER_PORT}`))
+app.listen(PORT, () => console.log(`Server listening on port:${PORT}`))
