@@ -8,6 +8,7 @@ class InterfaceStore extends Component {
         this.state = {
             usersArr: [],
             user: {},
+            highScores: [],
             points: 0,
             intervalSpeed: 50,
             canPlay: false
@@ -17,6 +18,13 @@ class InterfaceStore extends Component {
     getUsers = () => {
         axios.get("/users").then(res => {
             this.setState({usersArr: res.data})
+        })
+    }
+
+    getScores = () => {
+        axios.get("/scores").then(res => {
+            console.log(res.data)
+            this.setState({highScores: res.data})
         })
     }
 
@@ -61,6 +69,7 @@ class InterfaceStore extends Component {
         return (
             <Provider value={{
                 getUsers: this.getUsers,
+                getScores: this.getScores,
                 selectUser: this.selectUser,
                 incrementPoints: this.incrementPoints,
                 clearPoints: this.clearPoints,
