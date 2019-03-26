@@ -7,7 +7,7 @@ const DeathPage = (props) => {
     const resetGame = () => {
       props.resetSpeed()
       props.history.push('/')
-      props.clearPoints()
+      props.clearPoints() 
     }
 
   return (
