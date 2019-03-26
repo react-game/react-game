@@ -11,15 +11,16 @@ class InterfaceStore extends Component {
             points: 0,
             intervalSpeed: 50,
             canPlay: false,
-            userSpeed: 20,
+            playerSpeed: 20,
             dogSpeed: 1,
             isPaused: false
         }
     }
+    
     setPauseToFalse = () => {
         this.setState({
             isPaused: false,
-            userSpeed: 20,
+            playerSpeed: 20,
             dogSpeed: 1
         })
     }
@@ -28,13 +29,13 @@ class InterfaceStore extends Component {
         this.state.isPaused ?
     
         this.setState({
-            userSpeed: 20,
+            playerSpeed: 20,
             dogSpeed: 1,
             isPaused: false
         })
         :
         this.setState({
-            userSpeed: 0,
+            playerSpeed: 0,
             dogSpeed: 0,
             isPaused: true
         })

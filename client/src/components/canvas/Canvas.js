@@ -62,10 +62,12 @@ class Canvas extends Component {
         this.checkCollision()
     }
 
-    //userSpeed
+    
     //Player movement functions
+    //playerSpeed is from InterfaceStore
+    // If statement values are based off the size of the game canvas.
     moveDown = () => {
-        let speed = this.props.userSpeed
+        let speed = this.props.playerSpeed
         if(this.state.top < 400) {
             this.setState(prevState => ({
                 top: prevState.top + speed
@@ -77,7 +79,7 @@ class Canvas extends Component {
     }
 
     moveUp = () => {
-        let speed = this.props.userSpeed
+        let speed = this.props.playerSpeed
         if(this.state.top > 0) {
         this.setState(prevState => ({
             top: prevState.top - speed
@@ -89,7 +91,7 @@ class Canvas extends Component {
     }
 
     moveRight = () => {
-        let speed = this.props.userSpeed
+        let speed = this.props.playerSpeed
         if(this.state.left < 400) {
         this.setState(prevState => ({
             left: prevState.left + speed
@@ -101,7 +103,7 @@ class Canvas extends Component {
     }
 
     moveLeft = () => {
-        let speed = this.props.userSpeed
+        let speed = this.props.playerSpeed
         if(this.state.left > 0) {
         this.setState(prevState => ({
             left: prevState.left - speed

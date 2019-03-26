@@ -72,6 +72,7 @@ class Enemy extends Component {
     }
 
     //Enemy movement.  If statement values are based off the size of the game canvas.
+    //dogSpeed is from InterfaceStore
     moveDown = () => {
         let speed = this.props.dogSpeed
         if(this.state.top < 380) {
