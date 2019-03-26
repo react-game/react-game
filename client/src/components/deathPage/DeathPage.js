@@ -13,6 +13,7 @@ class DeathPage extends React.Component{
     this.props.clearPoints()
   }
 
+
   render(){
     return (
       <div className="death-page">

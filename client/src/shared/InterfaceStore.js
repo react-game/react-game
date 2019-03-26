@@ -12,8 +12,35 @@ class InterfaceStore extends Component {
             endGameMsg: "",
             points: 0,
             intervalSpeed: 50,
-            canPlay: false
+            canPlay: false,
+            playerSpeed: 20,
+            dogSpeed: 1,
+            isPaused: false
         }
+    }
+    
+    setPauseToFalse = () => {
+        this.setState({
+            isPaused: false,
+            playerSpeed: 20,
+            dogSpeed: 1
+        })
+    }
+
+    pauseGame = () => {
+        this.state.isPaused ?
+    
+        this.setState({
+            playerSpeed: 20,
+            dogSpeed: 1,
+            isPaused: false
+        })
+        :
+        this.setState({
+            playerSpeed: 0,
+            dogSpeed: 0,
+            isPaused: true
+        })
     }
     
     getUsers = () => {
@@ -101,6 +128,8 @@ class InterfaceStore extends Component {
                 newScores: this.newScores,
                 incrementEnemySpeed: this.incrementEnemySpeed,
                 resetSpeed: this.resetSpeed,
+                pauseGame: this.pauseGame,
+                setPauseToFalse: this.setPauseToFalse,
                 ...this.state
             }}>
                 {this.props.children}
