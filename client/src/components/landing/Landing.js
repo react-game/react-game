@@ -8,6 +8,7 @@ class Landing extends Component {
   componentDidMount() {
     this.props.getUsers()
     this.props.setPauseToFalse()
+    this.props.getScores()
   }
 
   toggleClass = () => {
