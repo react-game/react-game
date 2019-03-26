@@ -23,7 +23,6 @@ class InterfaceStore extends Component {
 
     getScores = () => {
         axios.get("/scores").then(res => {
-            console.log(res.data)
             this.setState({highScores: res.data})
         })
     }
@@ -51,6 +50,40 @@ class InterfaceStore extends Component {
         })
     }
 
+    newScores = () => {
+        let {first, second, third, _id} = this.state.highScores[0]
+        let {points} = this.state
+        console.log(777,first, second, third, _id, points)
+        if(points > first){
+            // this.setState(prevState => ({
+            //     first: points,
+            //     second: prevState.first,
+            //     third: prevState.second
+            // }))
+            axios.put(`/scores/${_id}`, {"first": points}).then(res => {
+                // this.setState({highScores: res.data})
+                console.log(333, res.data)
+            })
+        } else if(points > second){
+            // this.setState(prevState => ({
+            //     second: points,
+            //     third: prevState.second
+            // }))
+            axios.put(`/scores/${_id}`, {"second": points}).then(res => {
+                // this.setState({highScores: res.data})
+                console.log(333, res.data)
+            })
+        } else if(points > third){
+            // this.setState({
+            //     third: points
+            // })
+            axios.put(`/scores/${_id}`, {"third": points}).then(res => {
+                // this.setState({highScores: res.data})
+                console.log(333, res.data)
+            })
+        }
+    }
+
     incrementEnemySpeed = () => {
         let {intervalSpeed} = this.state
         let newSpeed =  Math.floor(intervalSpeed * .2)
@@ -73,6 +106,7 @@ class InterfaceStore extends Component {
                 selectUser: this.selectUser,
                 incrementPoints: this.incrementPoints,
                 clearPoints: this.clearPoints,
+                newScores: this.newScores,
                 incrementEnemySpeed: this.incrementEnemySpeed,
                 resetSpeed: this.resetSpeed,
                 ...this.state

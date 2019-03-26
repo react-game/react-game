@@ -3,7 +3,6 @@ import './points.css'
 import { withInterfaceStore } from '../../shared/InterfaceStore';
 
 const Points = (props) => {
-  console.log(props.highScores[0].first)
     return (
       <div className="points-box">
         <h2>HighScores</h2>

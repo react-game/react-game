@@ -2,23 +2,30 @@ import React from 'react';
 import { withInterfaceStore } from '../../shared/InterfaceStore';
 import './deathPage.css';
 
-const DeathPage = (props) => {
+class DeathPage extends React.Component{
+  componentDidMount() {
+    this.props.newScores()
+  }
+  
 
-    const resetGame = () => {
-      props.resetSpeed()
-      props.history.push('/')
-      props.clearPoints()
-    }
-
-  return (
-    <div className="death-page">
-      <h1>I'm sorry, {props.user.username}, the dog got you...</h1>
-      <img src={props.user.imgUrl} alt={props.user.username}/>
-      <h1>You had {props.points} points</h1>
-      <h1>Better luck next time!</h1>
-      <h2 onClick={resetGame}>PLAY AGAIN</h2>
-    </div>
-  );
+  resetGame = () => {
+      // this.props.newScores()
+      this.props.resetSpeed()
+      this.props.history.push('/')
+      this.props.clearPoints()
+  }
+  render(){
+      console.log(this.props.highScores)
+    return (
+      <div className="death-page">
+        <h1>I'm sorry, {this.props.user.username}, the dog got you...</h1>
+        <img src={this.props.user.imgUrl} alt={this.props.user.username}/>
+        <h1>You had {this.props.points} points</h1>
+        <h1>Better luck next time!</h1>
+        <h2 onClick={this.resetGame}>PLAY AGAIN</h2>
+      </div>
+    );
+  } 
 };
 
 export default withInterfaceStore(DeathPage);
