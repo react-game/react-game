@@ -1,6 +1,5 @@
 footer {
   display: flex;
-  cursor: pointer;
   bottom: 0;
   position: absolute;
   padding-bottom: 20px;
@@ -10,13 +9,15 @@ footer {
 footer > h2 {
   margin-left: 40px;
   transition: all .5s ease;
+  color: var(--secondary-color)
 }
 
-footer > h2:hover {
+footer > .links:hover {
   opacity: 0.6;
 }
 
 a {
   color: var(--secondary-color);
   text-decoration: none;
+  cursor: pointer;
 }
