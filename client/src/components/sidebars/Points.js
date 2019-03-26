@@ -8,10 +8,10 @@ const Points = (props) => {
         <h2>YOU ARE {props.user.username}!</h2>
         <img src={props.user.imgUrl} alt={props.user.username}/>
         <h2>POINTS: {props.points}</h2>
-        <h2>HighScores:</h2>
-        <p>1st: {props.highScores[0].first}</p>
-        <p>2nd: {props.highScores[0].second}</p>
-        <p>3rd: {props.highScores[0].third}</p>
+        <h2 className="score-title">HighScores:</h2>
+        <h2 className="scores">1st: {props.highScores[0].first}</h2>
+        <h2 className="scores">2nd: {props.highScores[0].second}</h2>
+        <h2 className="scores">3rd: {props.highScores[0].third}</h2>
       </div>
     );
 }

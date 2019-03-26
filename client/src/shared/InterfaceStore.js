@@ -47,7 +47,8 @@ class InterfaceStore extends Component {
 
     clearPoints = () => {
         this.setState({
-            points: 0
+            points: 0,
+            endGameMsg: ""
         })
     }
 
@@ -55,14 +56,14 @@ class InterfaceStore extends Component {
         let {first, second, third, _id} = this.state.highScores[0]
         let {points} = this.state
         if(points > first){
-            axios.put(`/scores/${_id}`, {"first": points}).then(res => {
+            axios.put(`/scores/${_id}`, {"first": points, "second": first, "third": second}).then(res => {
                 this.setState({
                     highScores: res.data, 
                     endGameMsg: `You beat the previous high score! You are now the top of the leaderboard!`
                 })
             })
         } else if(points > second){
-            axios.put(`/scores/${_id}`, {"second": points}).then(res => {
+            axios.put(`/scores/${_id}`, {"second": points, "third": second}).then(res => {
                 this.setState({
                     highScores: res.data, 
                     endGameMsg: `You beat second place! You are now second on the leaderboard!`

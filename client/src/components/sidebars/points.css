@@ -21,3 +21,14 @@
   padding: 10px 10px;
   text-shadow: 2px 2px 2px var(--light-shadow);
 }
+
+.score-title {
+  padding-top: 10px;
+  text-transform: uppercase;
+}
+
+.scores {
+  padding: 5px 5px !important; 
+  font-size: 22px;
+  text-transform: uppercase;
+}
