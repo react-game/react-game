@@ -17,6 +17,7 @@ class Canvas extends Component {
     componentDidMount() {
         window.addEventListener('keydown', this.movePlayer)
         this.generateFish()
+        this.props.clearPoints()
     }
 
     componentWillUnmount(){
