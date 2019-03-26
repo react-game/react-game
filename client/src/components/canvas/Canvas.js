@@ -154,6 +154,8 @@ class Canvas extends Component {
                 {/* Our enemy, the dog */}
                 <Enemy history={this.props.history} playerTop={this.state.top} playerLeft={this.state.left}/>
 
+                <div className={this.props.isPaused ? 'showPaused' : 'hiddenPaused'}>PAUSED</div>
+
                 {/* Our player */}
                 <img src={this.props.user.imgUrl} id="player" style={{top: "400px", left: "0px"}} alt="player" />
 

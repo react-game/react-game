@@ -40,3 +40,22 @@
   position: absolute;
   filter: drop-shadow(5px 5px 5px var(--dark-shadow));
 }
+
+.showPaused {
+  /* background-color:var(--secondary-color); */
+  height: 460px;
+  width: 460px;
+  /* color: var(--text-color); */
+  color: #F36F9E;
+  font-size: 42px;
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 5px;
+}
+
+.hiddenPaused {
+  display: none;
+}
