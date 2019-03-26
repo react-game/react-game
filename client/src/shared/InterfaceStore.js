@@ -9,6 +9,7 @@ class InterfaceStore extends Component {
             usersArr: [],
             user: {},
             highScores: [],
+            endGameMsg: "",
             points: 0,
             intervalSpeed: 50,
             canPlay: false
@@ -53,33 +54,23 @@ class InterfaceStore extends Component {
     newScores = () => {
         let {first, second, third, _id} = this.state.highScores[0]
         let {points} = this.state
-        console.log(777,first, second, third, _id, points)
         if(points > first){
-            // this.setState(prevState => ({
-            //     first: points,
-            //     second: prevState.first,
-            //     third: prevState.second
-            // }))
             axios.put(`/scores/${_id}`, {"first": points}).then(res => {
-                // this.setState({highScores: res.data})
-                console.log(333, res.data)
+                this.setState({
+                    highScores: res.data, 
+                    endGameMsg: `You beat the previous high score! You are now the top of the leaderboard!`
+                })
             })
         } else if(points > second){
-            // this.setState(prevState => ({
-            //     second: points,
-            //     third: prevState.second
-            // }))
             axios.put(`/scores/${_id}`, {"second": points}).then(res => {
-                // this.setState({highScores: res.data})
-                console.log(333, res.data)
+                this.setState({
+                    highScores: res.data, 
+                    endGameMsg: `You beat second place! You are now second on the leaderboard!`
+                })
             })
         } else if(points > third){
-            // this.setState({
-            //     third: points
-            // })
             axios.put(`/scores/${_id}`, {"third": points}).then(res => {
-                // this.setState({highScores: res.data})
-                console.log(333, res.data)
+                this.setState({highScores: res.data, endGameMsg: `You beat third place! You are now third on the leaderboard!`})
             })
         }
     }
