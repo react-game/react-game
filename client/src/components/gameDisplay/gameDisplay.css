@@ -4,12 +4,69 @@
   flex-direction: column;
 }
 
+.small {
+  align-items: center !important;
+}
+
+h2 {
+  font-size: 1.1em;
+}
+
+.restart {
+  font-size: 1.1em;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 10px;
+  margin: 10px 0px;
+  width: 50%;
+  box-shadow: 5px 8px 10px var(--dark-shadow), -5px 10px 10px var(--dark-shadow);
+  transition: all .5s ease;
+}
+  .restart > h2:hover {
+    opacity: 0.9;
+  }
+  
+  .restart:hover {
+    opacity: 0.8;
+  }
+
 .game-display-box {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
 }
 
 .game-display > h2 {
   cursor: pointer;
+}
+
+.game-square {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.spacebar-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.spacebar-text > p {
+  color: var(--text-color2);
+  text-transform: uppercase;
+  text-shadow: 5px 5px 5px var(--dark-shadow);
+}
+
+.spacebar-text > img {
+  width: 150px;
+  margin: 0px 5px;
+  box-shadow: 2px 2px 2px var(--dark-shadow);
+}
+
+@media screen and (min-width: 900px) {
+
 }

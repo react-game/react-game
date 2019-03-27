@@ -1,6 +1,6 @@
 footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100vw;
   bottom: 0;
   position: absolute;
@@ -11,7 +11,8 @@ footer {
 
 footer > h2 {
   transition: all .5s ease;
-  color: var(--secondary-color)
+  color: var(--secondary-color);
+  font-size: 1.5em;
 }
 
 footer > .links:hover {
