@@ -7,6 +7,12 @@ import arrows from '../../assets/landingarrows.svg';
 class Landing extends Component {
   componentDidMount() {
     this.props.getUsers()
+    this.props.setPauseToFalse()
+    this.props.getScores()
+  }
+
+  toggleClass = () => {
+    document.getElementById('choose-player').classList.toggle('wibble')
   }
 
   toggleClass = () => {

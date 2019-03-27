@@ -72,10 +72,12 @@ class Enemy extends Component {
     }
 
     //Enemy movement.  If statement values are based off the size of the game canvas.
+    //dogSpeed is from InterfaceStore
     moveDown = () => {
+        let speed = this.props.dogSpeed
         if(this.state.top < 380) {
         this.setState(prevState => ({
-            top: prevState.top + 1
+            top: prevState.top + speed
         }), () => {
             const enemy = document.getElementById('enemy')
             enemy.style.top = `${this.state.top}px`
@@ -84,9 +86,10 @@ class Enemy extends Component {
     }
 
     moveUp = () => {
+        let speed = this.props.dogSpeed
         if(this.state.top > 0) {
         this.setState(prevState => ({
-            top: prevState.top - 1
+            top: prevState.top - speed
         }), () => {
             const enemy = document.getElementById('enemy')
             enemy.style.top = `${this.state.top}px`
@@ -95,9 +98,10 @@ class Enemy extends Component {
     }
 
     moveRight = () => {
+        let speed = this.props.dogSpeed
         if(this.state.left < 380) {
         this.setState(prevState => ({
-            left: prevState.left + 1
+            left: prevState.left + speed
         }), () => {
             const enemy = document.getElementById('enemy')
             enemy.style.left = `${this.state.left}px`
@@ -106,9 +110,10 @@ class Enemy extends Component {
     }
 
     moveLeft = () => {
+        let speed = this.props.dogSpeed
         if(this.state.left > 0) {
         this.setState(prevState => ({
-            left: prevState.left - 1
+            left: prevState.left - speed
         }), () => {
             const enemy = document.getElementById('enemy')
             enemy.style.left = `${this.state.left}px`
@@ -117,6 +122,8 @@ class Enemy extends Component {
     }
 
     //Checks player position against enemy position and if they are within a specific range, it route's to endgame page.
+    // Math.abs + or - num are adjusting the radii of the player and dog to be in the center of their repective divs.
+    // <= value is the sum of the of both radii (less a few pixels) so that a collision can be detected when the radii touch.
     checkCollision = () => {
         const { playerTop, playerLeft } = this.props
         if ((Math.abs((playerTop + 30) - (this.state.top + 40)) <= 55) && (Math.abs((playerLeft + 30) - (this.state.left + 40)) <= 55)) {

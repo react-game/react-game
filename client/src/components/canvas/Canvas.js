@@ -4,6 +4,7 @@ import { withInterfaceStore } from '../../shared/InterfaceStore';
 import Enemy from './Enemy'
 import fish from '../../assets/fish2.png';
 
+
 class Canvas extends Component {
     constructor() {
         super()
@@ -17,6 +18,8 @@ class Canvas extends Component {
     componentDidMount() {
         window.addEventListener('keydown', this.movePlayer)
         this.generateFish()
+        this.props.clearPoints()
+        this.props.setPauseToFalse()
     }
 
     componentWillUnmount(){
@@ -48,20 +51,26 @@ class Canvas extends Component {
         } else if (e.keyCode === 38 || e.keyCode === 87) {
             this.moveUp()
 
-        }  else if (e.keyCode === 37 || e.keyCode === 65) {
+        } else if (e.keyCode === 37 || e.keyCode === 65) {
             this.moveLeft()
 
-        }  else if (e.keyCode === 68 || e.keyCode === 39) {
+        } else if (e.keyCode === 68 || e.keyCode === 39) {
             this.moveRight()
+        } else if (e.keyCode === 32) {
+            this.props.pauseGame()
         }
         this.checkCollision()
     }
 
+    
     //Player movement functions
+    //playerSpeed is from InterfaceStore
+    // If statement values are based off the size of the game canvas.
     moveDown = () => {
+        let speed = this.props.playerSpeed
         if(this.state.top < 400) {
             this.setState(prevState => ({
-                top: prevState.top + 20
+                top: prevState.top + speed
             }), () => {
                 const player = document.getElementById('player')
                 player.style.top = `${this.state.top}px`
@@ -70,9 +79,10 @@ class Canvas extends Component {
     }
 
     moveUp = () => {
+        let speed = this.props.playerSpeed
         if(this.state.top > 0) {
         this.setState(prevState => ({
-            top: prevState.top - 20
+            top: prevState.top - speed
         }), () => {
             const player = document.getElementById('player')
             player.style.top = `${this.state.top}px`
@@ -81,9 +91,10 @@ class Canvas extends Component {
     }
 
     moveRight = () => {
+        let speed = this.props.playerSpeed
         if(this.state.left < 400) {
         this.setState(prevState => ({
-            left: prevState.left + 20
+            left: prevState.left + speed
         }), () => {
             const player = document.getElementById('player')
             player.style.left = `${this.state.left}px`
@@ -92,9 +103,10 @@ class Canvas extends Component {
     }
 
     moveLeft = () => {
+        let speed = this.props.playerSpeed
         if(this.state.left > 0) {
         this.setState(prevState => ({
-            left: prevState.left - 20
+            left: prevState.left - speed
         }), () => {
             const player = document.getElementById('player')
             player.style.left = `${this.state.left}px`
@@ -114,9 +126,8 @@ class Canvas extends Component {
                 y: this.state.top,
                 x: this.state.left
             }
-            // ((Math.abs(fish.x - player.x) <= 35) && (Math.abs(fish.y - player.y) <= 35))
-            //Checks player position vs fish, if it's within range, it filters out that fish from the fishToDisplay array.
-            //Also adds points.
+            // Math.abs + or - num are adjusting the radii of the player and fish to be in the center of their repective divs.
+            // <= value is the sum of the of both radii (less a few pixels) so that a collision can be detected when the radii touch.
             if ((Math.abs((fish.x +15)- (player.x + 30)) <= 40) && (Math.abs((fish.y + 15)- (player.y + 30)) <= 40)) {
                 this.setState(prevState => ({
                     fishesToDisplay: prevState.fishesToDisplay.filter(remainingFish => {
@@ -142,6 +153,8 @@ class Canvas extends Component {
             <div className="canvas-wrapper">
                 {/* Our enemy, the dog */}
                 <Enemy history={this.props.history} playerTop={this.state.top} playerLeft={this.state.left}/>
+
+                <div className={this.props.isPaused ? 'showPaused' : 'hiddenPaused'}>PAUSED</div>
 
                 {/* Our player */}
                 <img src={this.props.user.imgUrl} id="player" style={{top: "400px", left: "0px"}} alt="player" />
