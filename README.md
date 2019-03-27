@@ -16,7 +16,7 @@ We created this 2D collision detection game in React, using Javascript for all g
 <img width="816" alt="smaller-screen-game" src="https://user-images.githubusercontent.com/29001520/55119281-e2bfc780-50b6-11e9-8452-4a243cc3be95.png">
 
 # Game-over Page
-<img width="1384" alt="gameover-page" src="https://user-images.githubusercontent.com/29001520/55119145-60cf9e80-50b6-11e9-9d67-34d5facecbd1.png">
+<img width="1101" alt="death-page" src="https://user-images.githubusercontent.com/29001520/55119645-4a2a4700-50b8-11e9-8a6d-64e36ce6ca46.png">
 
 # Mobile and Tablet detection notification screen
 <img width="234" alt="mobile-screen" src="https://user-images.githubusercontent.com/29001520/55119168-70e77e00-50b6-11e9-951e-6c3f42eaed36.png">
