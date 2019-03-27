@@ -1,5 +1,3 @@
-An app created with React.js to help find mountain bike events in the USA.
-
 Hosted at:
 https://cat-chase.herokuapp.com
 
