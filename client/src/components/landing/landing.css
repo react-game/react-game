@@ -24,7 +24,7 @@
   width: 100px;
 }
 
-#landing-button {
+.landing-button {
   cursor: pointer;
   background-color: var(--secondary-color);
   color: var(--text-color);
@@ -35,24 +35,24 @@
   transition: all .5s ease;
 }
 
-#landing-button > h2, #landing-button {
+.landing-button > h2, .landing-button {
   transition: all .5s ease;
 }
 
-#landing-button > h2 {
+.landing-button > h2 {
   text-shadow: 2px 2px 2px var(--light-shadow);
 }
 
 /* Pseudo classes for the 'enter' button */
-#landing-button > h2:hover {
+.landing-button > h2:hover {
   opacity: 0.9;
 }
 
-#landing-button:hover {
+.landing-button:hover {
   opacity: 0.8;
 }
 
-#landing-button:active {
+.landing-button:active {
   box-shadow: none;
 }
 
@@ -62,23 +62,26 @@
 
 .wibble {
   animation: wibble 0.8s cubic-bezier(.36,.07,.19,.97) both;
- }
- @keyframes wibble {
+}
+
+@keyframes wibble {
   10%, 90% {
-   transform: translate3d(-1px, 0, 0);
+    transform: translate3d(-1px, 0, 0);
   }
   
   20%, 80% {
-   transform: translate3d(2px, 0, 0);
+    transform: translate3d(2px, 0, 0);
   }
+
   30%, 50%, 70% {
-   transform: translate3d(-4px, 0, 0);
-   color: #F36F9E;
+    transform: translate3d(-4px, 0, 0);
+    color: #F36F9E;
   }
+
   40%, 60% {
-   transform: translate3d(4px, 0, 0);
+    transform: translate3d(4px, 0, 0);
   }
- }
+}
 
 .users {
   display: flex;
