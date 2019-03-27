@@ -12,6 +12,14 @@
 }
 
 .landing > h1 {
+  margin-bottom: 10px;
+}
+
+.landing > h2 {
+  font-size: 1.1em;
+}
+
+.landing > h1 {
   text-shadow: 5px 5px 5px var(--dark-shadow);
 }
 
@@ -21,7 +29,7 @@
 }
 
 .landing > h2 > img {
-  width: 100px;
+  width: 80px;
 }
 
 .landing-button {
@@ -92,6 +100,7 @@
 }
 
 .user-card {
+  width: 20%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -100,7 +109,7 @@
 }
 
 .user-card > img {
-  width: 150px;
+  width: 80%;
   filter: brightness(0.95) drop-shadow(5px 0px 5px var(--dark-shadow));
   -webkit-filter: brightness(0.95) drop-shadow(5px 5px 5px var(--dark-shadow));
 }
@@ -111,4 +120,27 @@
 .users > .user-card:hover {
   -webkit-filter: brightness(1.1) drop-shadow(10px -10px 5px var(--dark-shadow));
   filter: brightness(1.1) drop-shadow(10px -10px 5px var(--dark-shadow));
+}
+
+@media screen and (min-width: 720px) {
+
+  h1 {
+    margin-bottom: 0px;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .user-card {
+    width: unset;
+  }
+
+  .user-card > img {
+  width: 150px;
+  }
+
+  .landing > h2 > img {
+    width: 100px;
+  }
 }

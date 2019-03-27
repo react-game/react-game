@@ -8,7 +8,7 @@ import DeathPage from './components/deathPage/DeathPage';
 
 const App = () => {
   console.log(navigator.userAgent)
-  console.log(!navigator.userAgent.match(/Android|Mobile|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile/ig))
+  console.log(navigator.userAgent.match(/Android|Mobile|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile/ig))
 
   return (
     <div>

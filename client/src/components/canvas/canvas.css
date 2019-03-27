@@ -42,11 +42,11 @@
 }
 
 .showPaused {
-  /* background-color:var(--secondary-color); */
   height: 460px;
   width: 460px;
-  color: var(--text-color);
-  font-size: 42px;
+  color: var(--bright-color);
+  text-shadow: 5px 5px 5px var(--dark-shadow);  
+  font-size: 48px;
   position: absolute;
   z-index: 5;
   display: flex;
@@ -57,4 +57,10 @@
 
 .hiddenPaused {
   display: none;
+}
+
+@media screen and (max-width: 980px) {
+  .canvas-wrapper {
+    margin: 0px 10px;
+  }
 }
