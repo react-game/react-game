@@ -3,6 +3,8 @@ https://cat-chase.herokuapp.com
 
 # Cat Chase
 
+A full-stack group project made by Amy Knudson, Jessie Jones, and Lara Potjewyd. 
+We created this 2D collision detection game in React, using Javascript for all game logic, MongoDB and Mongoose to store and retrieve the player data and points.
 
 # Home Screen
 <img width="1370" alt="home-screen" src="https://user-images.githubusercontent.com/29001520/55119155-675e1600-50b6-11e9-9843-71ba564ceb80.png">
