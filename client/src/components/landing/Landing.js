@@ -15,10 +15,6 @@ class Landing extends Component {
     document.getElementById('choose-player').classList.toggle('wibble')
   }
 
-  toggleClass = () => {
-    document.getElementById('choose-player').classList.toggle('wibble')
-  }
-
   render() {
     let mappedUsers = this.props.usersArr.map(user => {
       return (
