@@ -45,8 +45,7 @@
   /* background-color:var(--secondary-color); */
   height: 460px;
   width: 460px;
-  /* color: var(--text-color); */
-  color: #F36F9E;
+  color: var(--text-color);
   font-size: 42px;
   position: absolute;
   z-index: 5;
