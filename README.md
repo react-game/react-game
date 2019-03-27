@@ -1,14 +1,14 @@
 An app created with React.js to help find mountain bike events in the USA.
 
 Hosted at:
-http://nouphill.surge.sh/
+https://cat-chase.herokuapp.com
 
-# Mountain Bike Event Finder
+# Cat Chase
 ## Getting Started
 
 1.  Clone the repo:
 
-        https://github.com/jessiemjones/Mountainbike-Event-Finder-frontendapp.git
+        https://github.com/react-game/react-game.git
 
 2.  Install dependencies:
 
