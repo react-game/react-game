@@ -6,9 +6,9 @@ import arrows from '../../assets/landingarrows.svg';
 
 class Landing extends Component {
   componentDidMount() {
-    this.props.getUsers()
+    // this.props.getUsers()
     this.props.setPauseToFalse()
-    this.props.getScores()
+    // this.props.getScores()
   }
 
   toggleClass = () => {
