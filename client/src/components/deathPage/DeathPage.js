@@ -21,7 +21,6 @@ class DeathPage extends React.Component{
         {this.props.endGameMsg ? <h1>{this.props.endGameMsg}</h1> : null}
         <img src={this.props.user.imgUrl} alt={this.props.user.username}/>
         <h1>You had {this.props.points} points</h1>
-        <h1>Better luck next time!</h1>
         <h2 onClick={this.resetGame}>PLAY AGAIN</h2>
       </div>
     );
