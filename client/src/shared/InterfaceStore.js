@@ -1,14 +1,41 @@
 import React, { Component } from 'react';
-import axios from "axios"
+// import axios from "axios"
 const {Provider, Consumer} = React.createContext()
 
 class InterfaceStore extends Component {
     constructor(){
         super()
         this.state = {
-            usersArr: [],
+            usersArr: [
+                {
+                    "username": "Flufferkins",
+                    "imgUrl": "https://robohash.org/flufferkins?set=set4"
+                },
+                {
+                    "username": "Piddy Diddles",
+                    "imgUrl": "https://robohash.org/PiddyDiddles?set=set4"
+                },
+                {
+                    "username": "Sgt Whiskers",
+                    "imgUrl": "https://robohash.org/sgtwhiskers?set=set4"
+                },
+                {
+                    "username": "Pickles",
+                    "imgUrl": "https://robohash.org/pickles?set=set4"
+                },
+                {
+                    "username": "Pooki",
+                    "imgUrl": "https://robohash.org/pooki?set=set4"
+                }
+            ],
             user: {},
-            highScores: [],
+            highScores: [
+                {
+                    "first": "100",
+                    "second": "75",
+                    "third": "50"
+                }
+            ],
             endGameMsg: "",
             points: 0,
             intervalSpeed: 50,
@@ -43,17 +70,17 @@ class InterfaceStore extends Component {
         })
     }
     
-    getUsers = () => {
-        axios.get("/users").then(res => {
-            this.setState({usersArr: res.data})
-        })
-    }
+    // getUsers = () => {
+    //     axios.get("/users").then(res => {
+    //         this.setState({usersArr: res.data})
+    //     })
+    // }
 
-    getScores = () => {
-        axios.get("/scores").then(res => {
-            this.setState({highScores: res.data})
-        })
-    }
+    // getScores = () => {
+    //     axios.get("/scores").then(res => {
+    //         this.setState({highScores: res.data})
+    //     })
+    // }
 
     selectUser = id => {
         this.state.usersArr.map((user, i) => {
@@ -83,23 +110,32 @@ class InterfaceStore extends Component {
         let {first, second, third, _id} = this.state.highScores[0]
         let {points} = this.state
         if(points > first){
-            axios.put(`/scores/${_id}`, {"first": points, "second": first, "third": second}).then(res => {
-                this.setState({
-                    highScores: res.data, 
-                    endGameMsg: `You beat the previous high score! You are now the top of the leaderboard!`
-                })
+            // axios.put(`/scores/${_id}`, {"first": points, "second": first, "third": second}).then(res => {
+            //     this.setState({
+            //         highScores: {"first": points, "second": first, "third": second}, 
+            //         endGameMsg: `You beat the previous high score! You are now the top of the leaderboard!`
+            //     })
+            // })
+            this.setState({
+                highScores: {"first": points, "second": first, "third": second}, 
+                endGameMsg: `You beat the previous high score! You are now the top of the leaderboard!`
             })
         } else if(points > second){
-            axios.put(`/scores/${_id}`, {"second": points, "third": second}).then(res => {
-                this.setState({
-                    highScores: res.data, 
-                    endGameMsg: `You beat second place! You are now second on the leaderboard!`
-                })
+            // axios.put(`/scores/${_id}`, {"second": points, "third": second}).then(res => {
+            //     this.setState({
+            //         highScores: res.data, 
+            //         endGameMsg: `You beat second place! You are now second on the leaderboard!`
+            //     })
+            // })
+            this.setState({
+                highScores: {"second": points, "third": second}, 
+                endGameMsg: `You beat second place! You are now second on the leaderboard!`
             })
         } else if(points > third){
-            axios.put(`/scores/${_id}`, {"third": points}).then(res => {
-                this.setState({highScores: res.data, endGameMsg: `You beat third place! You are now third on the leaderboard!`})
-            })
+            // axios.put(`/scores/${_id}`, {"third": points}).then(res => {
+            //     this.setState({highScores: res.data, endGameMsg: `You beat third place! You are now third on the leaderboard!`})
+            // })
+            this.setState({highScores: {"third": points}, endGameMsg: `You beat third place! You are now third on the leaderboard!`})
         }
     }
 
