@@ -1,6 +1,3 @@
-Hosted at:
-https://cat-chase.herokuapp.com
-
 # Cat Chase
 
 A full-stack group project made by Amy Knudson, Jessie Jones, and Lara Potjewyd. 
