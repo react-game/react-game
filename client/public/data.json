@@ -2,23 +2,28 @@
 	"users": [
 		{
 			"username": "Flufferkins",
-			"imgUrl": "https://robohash.org/flufferkins?set=set4"
+			"imgUrl": "https://robohash.org/flufferkins?set=set4",
+			"user_id": 1
 		},
 		{
 			"username": "Piddy Diddles",
-			"imgUrl": "https://robohash.org/PiddyDiddles?set=set4"
+			"imgUrl": "https://robohash.org/PiddyDiddles?set=set4",
+			"user_id": 2
 		},
 		{
 			"username": "Sgt Whiskers",
-			"imgUrl": "https://robohash.org/sgtwhiskers?set=set4"
+			"imgUrl": "https://robohash.org/sgtwhiskers?set=set4",
+			"user_id": 3
 		},
 		{
 			"username": "Pickles",
-			"imgUrl": "https://robohash.org/pickles?set=set4"
+			"imgUrl": "https://robohash.org/pickles?set=set4",
+			"user_id": 4
 		},
 		{
 			"username": "Pooki",
-			"imgUrl": "https://robohash.org/pooki?set=set4"
+			"imgUrl": "https://robohash.org/pooki?set=set4",
+			"user_id": 5
 		}
 	],
 	"scoreboard": {
